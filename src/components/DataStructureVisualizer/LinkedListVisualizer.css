@@ -1,0 +1,56 @@
+/* src/components/DataStructureVisualizer/LinkedListVisualizer.css */
+.linked-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow-x: auto;
+  }
+  
+  .node-container {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    position: relative;
+  }
+  
+  .node {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+  }
+  
+  .node.current {
+    background-color: #ff0000;
+    color: white;
+  }
+  
+  .node.highlighted {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .node-value {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .next-arrow {
+    position: absolute;
+    right: -30px;
+    font-size: 24px;
+    color: #666;
+  }
+  
+  .prev-arrow {
+    position: absolute;
+    left: -30px;
+    font-size: 24px;
+    color: #666;
+  }
