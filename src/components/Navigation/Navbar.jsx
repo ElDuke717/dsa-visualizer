@@ -1,14 +1,12 @@
 // src/components/Navigation/Navbar.jsx
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        Data Structures & Algorithms
-      </div>
+      <div className="navbar-brand">Data Structures & Algorithms</div>
       <ul className="nav-links">
         <li className="dropdown">
           <span className="dropdown-title">Graph</span>
@@ -31,6 +29,9 @@ const Navbar = () => {
             <NavLink to="/tree/binary">Binary Tree</NavLink>
             <NavLink to="/tree/heap">Heap</NavLink>
           </div>
+        </li>
+        <li className="dropdown">
+          <NavLink to="/hash-table">Hash Table</NavLink>
         </li>
       </ul>
     </nav>

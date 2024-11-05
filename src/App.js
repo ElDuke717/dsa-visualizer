@@ -9,6 +9,7 @@ import DoublyLinkedListPage from './pages/LinkedList/DoublyLinkedListPage';
 import BasicGraphPage from './pages/Graph/BasicGraphPage';
 import BinaryTreePage from './pages/Tree/BinaryTreePage';
 import HeapPage from './pages/Tree/HeapPage';
+import HashTablePage from './pages/HashTable/HashTablePage';
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/linked-list/doubly" element={<DoublyLinkedListPage />} />
             <Route path="/tree/binary" element={<BinaryTreePage />} />
             <Route path="/tree/heap" element={<HeapPage/>} />
+            <Route path="/hash-table" element={<HashTablePage />} />
           </Routes>
         </div>
       </div>
