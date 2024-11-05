@@ -10,6 +10,7 @@ import BasicGraphPage from './pages/Graph/BasicGraphPage';
 import BinaryTreePage from './pages/Tree/BinaryTreePage';
 import HeapPage from './pages/Tree/HeapPage';
 import HashTablePage from './pages/HashTable/HashTablePage';
+import { QuickSortPage, MergeSortPage, HeapSortPage, CountingSortPage, RadixSortPage, BubbleSortPage } from './pages/Sorting';
 import './App.css';
 
 function App() {
@@ -29,6 +30,12 @@ function App() {
             <Route path="/tree/binary" element={<BinaryTreePage />} />
             <Route path="/tree/heap" element={<HeapPage/>} />
             <Route path="/hash-table" element={<HashTablePage />} />
+            <Route path="/sorting/quick" element={<QuickSortPage />} />
+            <Route path="/sorting/merge" element={<MergeSortPage />} />
+            <Route path="/sorting/heap" element={<HeapSortPage />} />
+            <Route path="/sorting/counting" element={<CountingSortPage />} />
+            <Route path="/sorting/radix" element={<RadixSortPage />} />
+            <Route path="/sorting/bubble" element={<BubbleSortPage />} />
           </Routes>
         </div>
       </div>

@@ -1,0 +1,11 @@
+/* src/components/DataStructureVisualizer/SortingVisualizer.css */
+.sorting-visualizer {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .sorting-visualizer rect {
+    transition: height 0.3s, fill 0.3s;
+  }
