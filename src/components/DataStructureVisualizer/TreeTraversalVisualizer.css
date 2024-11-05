@@ -1,0 +1,33 @@
+/* src/components/DataStructureVisualizer/TreeTraversalVisualizer.css */
+.tree-traversal-visualizer {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .traversal-path {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .path-nodes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .path-node {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .path-node.current {
+    color: #ff0000;
+    font-weight: bold;
+  }

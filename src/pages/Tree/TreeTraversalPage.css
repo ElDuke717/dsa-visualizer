@@ -1,0 +1,95 @@
+/* src/pages/Tree/TreeTraversalPage.css */
+/* Update the traversal-selector styles */
+.traversal-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .traversal-selector button {
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    min-width: 150px;
+  }
+  
+  .traversal-selector button.active {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .traversal-selector button:hover:not(:disabled) {
+    background-color: #45a049;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .traversal-selector button:disabled {
+    border-color: #ccc;
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Update the action buttons styles */
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .action-buttons button {
+    padding: 10px 24px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    min-width: 160px;
+  }
+  
+  .action-buttons button:hover:not(:disabled) {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .action-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Add styles for the controls container */
+  .controls {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Add a label to show current selection */
+  .current-selection {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .current-selection span {
+    font-weight: bold;
+    color: #4CAF50;
+  }

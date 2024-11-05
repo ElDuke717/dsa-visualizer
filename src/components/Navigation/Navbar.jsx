@@ -28,6 +28,7 @@ const Navbar = () => {
           <div className="dropdown-content">
             <NavLink to="/tree/binary">Binary Tree</NavLink>
             <NavLink to="/tree/heap">Heap</NavLink>
+            <NavLink to="/tree/traversal">Tree Traversal</NavLink>
           </div>
         </li>
         <li className="dropdown">
@@ -45,6 +46,16 @@ const Navbar = () => {
         </li>
         <li className="dropdown">
           <NavLink to="/hash-table">Hash Table</NavLink>
+        </li>
+        <li className="dropdown">
+        <span className="dropdown-title">Dynamic Programming</span>
+        <div className="dropdown-content">
+            <NavLink to="/dp/sliding-window">Sliding Window</NavLink>
+            <NavLink to="/dp/two-pointers">Two Pointers</NavLink>
+            <NavLink to="/dp/backtracking">Backtracking</NavLink>
+            <NavLink to="/dp/tabulation">Tabulation</NavLink>
+            <NavLink to="/dp/memoization">Memoization</NavLink>
+        </div>
         </li>
       </ul>
     </nav>

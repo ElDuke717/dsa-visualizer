@@ -1,0 +1,23 @@
+/* src/components/DataStructureVisualizer/TabulationVisualizer.css */
+.tabulation-visualizer {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tabulation-visualizer svg {
+    min-height: 200px;
+  }
+  
+  .tabulation-visualizer rect {
+    transition: all 0.3s ease;
+  }
+  
+  .tabulation-visualizer text {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }

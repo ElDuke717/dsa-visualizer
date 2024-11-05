@@ -10,7 +10,22 @@ import BasicGraphPage from './pages/Graph/BasicGraphPage';
 import BinaryTreePage from './pages/Tree/BinaryTreePage';
 import HeapPage from './pages/Tree/HeapPage';
 import HashTablePage from './pages/HashTable/HashTablePage';
-import { QuickSortPage, MergeSortPage, HeapSortPage, CountingSortPage, RadixSortPage, BubbleSortPage } from './pages/Sorting';
+import TreeTraversalPage from './pages/Tree/TreeTraversalPage';
+import {
+  BubbleSortPage,
+  InsertionSortPage,
+  BucketSortPage,
+  QuickSortPage,
+  MergeSortPage,
+  HeapSortPage,
+  CountingSortPage,
+  RadixSortPage
+} from './pages/Sorting';
+import SlidingWindowPage from './pages/DynamicProgramming/SlidingWindowPage';
+import TwoPointersPage from './pages/DynamicProgramming/TwoPointersPage';
+import BacktrackingPage from './pages/DynamicProgramming/BacktrackingPage';
+import TabulationPage from './pages/DynamicProgramming/TabulationPage';
+import MemoizationPage from './pages/DynamicProgramming/MemoizationPage';
 import './App.css';
 
 function App() {
@@ -29,6 +44,7 @@ function App() {
             <Route path="/linked-list/doubly" element={<DoublyLinkedListPage />} />
             <Route path="/tree/binary" element={<BinaryTreePage />} />
             <Route path="/tree/heap" element={<HeapPage/>} />
+            <Route path="/tree/traversal" element={<TreeTraversalPage />} />
             <Route path="/hash-table" element={<HashTablePage />} />
             <Route path="/sorting/quick" element={<QuickSortPage />} />
             <Route path="/sorting/merge" element={<MergeSortPage />} />
@@ -36,6 +52,14 @@ function App() {
             <Route path="/sorting/counting" element={<CountingSortPage />} />
             <Route path="/sorting/radix" element={<RadixSortPage />} />
             <Route path="/sorting/bubble" element={<BubbleSortPage />} />
+            <Route path="/sorting/insertion" element={<InsertionSortPage />} />
+            <Route path="/sorting/bucket" element={<BucketSortPage />} />
+            <Route path="/dp/sliding-window" element={<SlidingWindowPage />} />
+            <Route path="/dp/two-pointers" element={<TwoPointersPage />} />
+            <Route path="/dp/backtracking" element={<BacktrackingPage />} />
+            <Route path="/dp/tabulation" element={<TabulationPage />} />
+            <Route path="/dp/memoization" element={<MemoizationPage />} />
+            
           </Routes>
         </div>
       </div>
