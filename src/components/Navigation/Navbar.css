@@ -1,77 +1,311 @@
 /* src/components/Navigation/Navbar.css */
 .navbar {
-    background-color: #333;
-    padding: 1rem 2rem;
+  background-color: #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-title {
+  color: white;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.dropdown:hover .dropdown-title {
+  background-color: #444;
+}
+
+/* Problems dropdown specific styles */
+.dropdown:last-child .dropdown-content {
+  width: 800px;
+  /* Change right alignment to ensure dropdown stays in view */
+  right: 0;
+  top: calc(100% - 5px); /* Move up slightly to create overlap */
+  left: auto; /* Reset any left positioning */
+  transform: translateX(0); /* Adjust if needed to keep dropdown in view */
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 1000;
+  /* Add max-height and scrolling for tall content */
+  max-height: 80vh;
+  overflow-y: auto;
+  /* Ensure dropdown stays within viewport */
+  margin-right: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdown:last-child:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content:before {
+  content: "";
+  position: absolute;
+  top: -20px; /* Match padding-bottom of dropdown */
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.dropdown-content {
+  pointer-events: none;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    pointer-events: all;
+  }
+  
+
+/* Adjust the problems dropdown position */
+.dropdown:last-child {
+  position: static; /* Change from relative to static */
+  padding-bottom: 20px; /* Add padding to create space for dropdown */
+}
+
+/* Make submenu items more compact */
+.submenu {
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  pointer-events:all;
+}
+
+.submenu-title {
+  display: block;
+  font-weight: bold;
+  color: #2196f3;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.problem-category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.problem-category a {
+  color: #333;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.problem-category a:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.difficulty-tag {
+  font-size: 0.75em;
+  padding: 1px 4px;
+  border-radius: 3px;
+  margin-left: 4px;
+  color: white;
+}
+
+.difficulty-tag.easy {
+  background-color: #00c853;
+}
+
+.difficulty-tag.medium {
+  background-color: #ffa000;
+}
+
+.difficulty-tag.hard {
+  background-color: #d32f2f;
+}
+
+/* Regular dropdown content styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-title::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 0.8em;
+    transition: transform 0.3s;
+  }
+
+  .dropdown:hover .dropdown-title::after {
+    transform: rotate(180deg);
+  }
+
+/* Active link styles */
+.dropdown-content a.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+/* Add to Navbar.css */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.problem-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ensure the dropdown stays within the viewport */
+.problems-dropdown {
+  max-width: calc(100vw - 40px);
+  margin: 0 20px;
+}
+
+/* Add responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .dropdown:last-child .dropdown-content {
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: 0;
+  }
+}
+
+/* Add to Navbar.css */
+.dropdown-trigger {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.dropdown-inner {
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.problem-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.problem-link:hover {
+  background-color: #f5f5f5;
+}
+
+/* Add transition for smoother appearance */
+.dropdown-content {
+  transform: translateY(-10px);
+  transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  transform: translateY(0);
+}
+
+
+/* Add to Navbar.css */
+.dropdown-trigger {
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+  
+  .dropdown-inner {
+    position: relative;
+    z-index: 2;
+    background: white;
+  }
+  
+  .problem-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .navbar-brand {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin-left: 2rem;
-  }
-  
-  .nav-links a {
-    color: #fff;
+    padding: 8px 12px;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    color: #333;
     border-radius: 4px;
-    transition: background-color 0.3s;
   }
   
-  .nav-links a:hover {
-    background-color: #555;
+  .problem-link:hover {
+    background-color: #f5f5f5;
   }
   
-  .nav-links a.active {
-    background-color: #4CAF50;
-  }
-
-  .dropdown {
-    position: relative;
-    padding: 0.5rem 1rem;
-  }
-  
-  .dropdown-title {
-    color: white;
-    cursor: pointer;
-  }
-  
+  /* Add transition for smoother appearance */
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 4px;
+    transform: translateY(-10px);
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
   }
   
   .dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .dropdown-content a {
-    padding: 12px 16px;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #555;
+    transform: translateY(0);
   }

@@ -1,0 +1,91 @@
+/* src/pages/Problems/Problems.css */
+.problem-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .problem-header {
+    margin-bottom: 30px;
+  }
+  
+  .problem-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .difficulty {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .difficulty.medium {
+    background-color: #ffa116;
+    color: white;
+  }
+  
+  .category {
+    padding: 4px 12px;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+    color: #2e7d32;
+  }
+  
+  .controls {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .stats {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2196F3;
+  }
+  
+  .approach-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .approach-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .approach-content ol,
+  .approach-content ul {
+    margin-left: 20px;
+  }
+  
+  .approach-content li {
+    margin: 8px 0;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .stats div {
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
