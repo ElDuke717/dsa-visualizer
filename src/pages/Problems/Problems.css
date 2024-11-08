@@ -89,3 +89,35 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
+
+
+.string-visualizer {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.char {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.char.current {
+  background-color: #ff4444;
+  color: white;
+}
+
+.char.in-window {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.window-display {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
