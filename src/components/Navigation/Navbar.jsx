@@ -71,7 +71,9 @@ const Navbar = () => {
         </div>
         </li>
         <li className="dropdown">
-          <NavLink to="/hash-table">Hash Table</NavLink>
+        <span className="dropdown-title">
+          <NavLink to="/hash-table" className="nav-link">Hash Table</NavLink>
+        </span>
         </li>
         <li className="dropdown">
         <span className="dropdown-title">Dynamic Programming</span>

@@ -29,6 +29,8 @@ import MemoizationPage from './pages/DynamicProgramming/MemoizationPage';
 import NumberOfIslands from './pages/Problems/Graphs/NumberOfIslands';
 import MaxAreaIsland from './pages/Problems/Graphs/MaxAreaIsland';
 import LevelOrderTraversal from './pages/Problems/Trees/LevelOrderTraversal';
+import MaximumDepth from './pages/Problems/Trees/MaximumDepth';
+import LowestCommonAncestor from './pages/Problems/Trees/LowestCommonAncestor';
 import './App.css';
 
 function App() {
@@ -65,6 +67,9 @@ function App() {
             <Route path="/problems/graphs/number-of-islands" element={<NumberOfIslands />} />
             <Route path="/problems/graphs/max-area-island" element={<MaxAreaIsland />} />
             <Route path="/problems/trees/level-order" element={<LevelOrderTraversal />} />
+            <Route path="/problems/trees/max-depth" element={<MaximumDepth />} />
+            <Route path="/problems/trees/lowest-common-ancestor" element={<LowestCommonAncestor />} />
+            
           </Routes>
         </div>
       </div>

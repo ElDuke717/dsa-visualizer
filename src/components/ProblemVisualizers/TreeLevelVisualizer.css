@@ -1,42 +1,64 @@
 /* src/components/ProblemVisualizers/TreeLevelVisualizer.css */
 .tree-level-visualizer {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .level-results {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .level-row {
-    display: flex;
-    padding: 8px;
-    border-radius: 4px;
-    margin: 4px 0;
-    transition: all 0.3s ease;
-  }
-  
-  .level-row.current {
-    background-color: #e3f2fd;
-  }
-  
-  .level-label {
-    font-weight: bold;
-    width: 80px;
-  }
-  
-  .level-values {
-    font-family: monospace;
-    margin-left: 10px;
-  }
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-results {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.level-row {
+  display: flex;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.level-row.current {
+  background-color: #e3f2fd;
+}
+
+.level-label {
+  font-weight: bold;
+  width: 80px;
+}
+
+.level-values {
+  font-family: monospace;
+  margin-left: 10px;
+}
+
+.current-path {
+  font-family: monospace;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Transition effects */
+.tree-level-visualizer circle {
+  transition: fill 0.3s, stroke-width 0.3s;
+}
+
+.tree-level-visualizer line {
+  transition: stroke-width 0.3s;
+}
+
+.tree-level-visualizer text {
+  font-family: Arial, sans-serif;
+  user-select: none;
+}

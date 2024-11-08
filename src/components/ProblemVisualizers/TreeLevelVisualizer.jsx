@@ -4,9 +4,9 @@ import './TreeLevelVisualizer.css';
 
 const TreeLevelVisualizer = ({
   tree,
-  currentLevel = null,
-  visitedNodes = new Set(),
-  levelResults = [],
+  currentPath = [],
+  highlightedNodes = new Set(),
+  specialNodes = new Set(), // Add this prop
   width = 800,
   height = 400
 }) => {
@@ -22,8 +22,9 @@ const TreeLevelVisualizer = ({
     if (!node) return null;
 
     const position = calculateNodePosition(node, level, startX, endX);
-    const isCurrentLevel = level === currentLevel;
-    const isVisited = visitedNodes.has(node.val);
+    const isHighlighted = highlightedNodes.has(node.val);
+    const isSpecialNode = specialNodes.has(node.val); // Add this line
+    const isInCurrentPath = currentPath.includes(node.val);
 
     return (
       <g key={`${level}-${position.x}-${position.y}`}>
@@ -54,16 +55,21 @@ const TreeLevelVisualizer = ({
           cx={position.x}
           cy={position.y}
           r={25}
-          fill={isCurrentLevel ? '#ff0000' : isVisited ? '#4CAF50' : '#fff'}
-          stroke="#333"
-          strokeWidth="2"
+          fill={
+            isSpecialNode ? '#ff9800' :  // Special nodes (p and q)
+            isInCurrentPath ? '#ff0000' : // Current path being explored
+            isHighlighted ? '#4CAF50' :   // Highlighted nodes (found paths)
+            '#fff'                        // Default color
+          }
+          stroke={isSpecialNode ? '#f57c00' : '#333'}
+          strokeWidth={isSpecialNode ? "3" : "2"}
         />
         <text
           x={position.x}
           y={position.y}
           textAnchor="middle"
           dy=".3em"
-          fill={isCurrentLevel || isVisited ? '#fff' : '#000'}
+          fill={isSpecialNode || isInCurrentPath || isHighlighted ? '#fff' : '#000'}
           fontSize="14"
         >
           {node.val}
@@ -84,15 +90,11 @@ const TreeLevelVisualizer = ({
         </g>
       </svg>
       <div className="level-results">
-        {levelResults.map((level, index) => (
-          <div 
-            key={index} 
-            className={`level-row ${index === currentLevel ? 'current' : ''}`}
-          >
-            <span className="level-label">Level {index}:</span>
-            <span className="level-values">[{level.join(', ')}]</span>
+        {currentPath.length > 0 && (
+          <div className="current-path">
+            Current Path: [{currentPath.join(' → ')}]
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
