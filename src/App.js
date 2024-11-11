@@ -37,6 +37,10 @@ import LevelOrderTraversal from "./pages/Problems/Trees/LevelOrderTraversal";
 import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
 import LongestSubstring from "./pages/Problems/SlidingWindow/LongestSubstring";
+import TwoSum from './pages/Problems/TwoPointers/TwoSum';
+import Subsets from './pages/Problems/Backtracking/Subsets';
+import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
+import Cycle from './pages/Problems/LinkedLists/Cycle';
 import "./App.css";
 
 function App() {
@@ -100,6 +104,10 @@ function App() {
               path="problems/sliding-window/longest-substring"
               element={<LongestSubstring />}
             />
+            <Route path="/problems/two-pointers/two-sum" element={<TwoSum />} />
+            <Route path="/problems/backtracking/subsets" element={<Subsets />} />
+            <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
+            <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
           </Routes>
         </div>
       </div>
