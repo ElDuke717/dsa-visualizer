@@ -33,6 +33,7 @@ import TabulationPage from "./pages/DynamicProgramming/TabulationPage";
 import MemoizationPage from "./pages/DynamicProgramming/MemoizationPage";
 import NumberOfIslands from "./pages/Problems/Graphs/NumberOfIslands";
 import MaxAreaIsland from "./pages/Problems/Graphs/MaxAreaIsland";
+import EmployeeImportance from './pages/Problems/Graphs/EmployeeImportance';
 import LevelOrderTraversal from "./pages/Problems/Trees/LevelOrderTraversal";
 import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
@@ -88,6 +89,7 @@ function App() {
               path="/problems/graphs/max-area-island"
               element={<MaxAreaIsland />}
             />
+            <Route path="/problems/graphs/employee-importance" element={<EmployeeImportance />} />
             <Route
               path="/problems/trees/level-order"
               element={<LevelOrderTraversal />}
@@ -108,6 +110,7 @@ function App() {
             <Route path="/problems/backtracking/subsets" element={<Subsets />} />
             <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
+
           </Routes>
         </div>
       </div>
