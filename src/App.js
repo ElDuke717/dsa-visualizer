@@ -34,6 +34,7 @@ import MemoizationPage from "./pages/DynamicProgramming/MemoizationPage";
 import NumberOfIslands from "./pages/Problems/Graphs/NumberOfIslands";
 import MaxAreaIsland from "./pages/Problems/Graphs/MaxAreaIsland";
 import EmployeeImportance from './pages/Problems/Graphs/EmployeeImportance';
+import CloneGraph from './pages/Problems/Graphs/CloneGraph';
 import LevelOrderTraversal from "./pages/Problems/Trees/LevelOrderTraversal";
 import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
@@ -90,6 +91,7 @@ function App() {
               element={<MaxAreaIsland />}
             />
             <Route path="/problems/graphs/employee-importance" element={<EmployeeImportance />} />
+            <Route path="/problems/graphs/clone-graph" element={<CloneGraph />} />
             <Route
               path="/problems/trees/level-order"
               element={<LevelOrderTraversal />}

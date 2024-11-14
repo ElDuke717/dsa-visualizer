@@ -8,7 +8,9 @@ const Navbar = () => {
         Graphs: [
           { title: "Number of Islands", path: "/problems/graphs/number-of-islands", difficulty: "Medium" },
           { title: "Max Area of Island", path: "/problems/graphs/max-area-island", difficulty: "Medium" },
-          { title: "Employee Importance", path: "/problems/graphs/employee-importance", difficulty: "Medium" }
+          { title: "Employee Importance", path: "/problems/graphs/employee-importance", difficulty: "Medium" },
+          { title: "Clone Graph", path: "/problems/graphs/clone-graph", difficulty: "Medium" }
+
         ],
         Trees: [
           { title: "Level Order Traversal", path: "/problems/trees/level-order", difficulty: "Medium" },

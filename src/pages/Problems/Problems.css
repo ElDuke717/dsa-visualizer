@@ -349,7 +349,6 @@
   --step-index: 9;
 }
 
-
 .linked-list-visualization {
   margin: 20px;
   padding: 20px;
@@ -435,4 +434,29 @@
 
 .fast-info {
   color: #ff9800;
+}
+
+/* Add to your existing CSS */
+.graph-visualization {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.graph-label {
+  font-size: 16px;
+  font-weight: bold;
+  fill: #333;
+}
+
+/* Add transition effects */
+.graph-visualization circle {
+  transition: fill 0.3s;
+}
+
+.graph-visualization line {
+  transition: stroke 0.3s;
 }
