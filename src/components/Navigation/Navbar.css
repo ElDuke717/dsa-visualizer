@@ -13,6 +13,18 @@
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.navbar-brand.active {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -20,9 +32,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 20px;
+  gap: 10px; /* Reduce the gap between items */
   align-items: center; /* This will vertically center all items */
   height: 100%;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
 }
 
 .dropdown {
@@ -71,7 +84,16 @@
   visibility: hidden;
 }
 
-.dropdown:last-child:hover .dropdown-content {
+/* Show dropdown on hover for all dropdowns except the problems dropdown */
+.dropdown:not(.problems-dropdown):hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Show dropdown when active class is present (for Problems dropdown) */
+.dropdown.active .dropdown-content,
+.dropdown-content.show {
   display: block;
   opacity: 1;
   visibility: visible;
@@ -91,7 +113,9 @@
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content,
+.dropdown-content.show {
   pointer-events: all;
 }
 
@@ -99,6 +123,28 @@
 .dropdown:last-child {
   position: static; /* Change from relative to static */
   padding-bottom: 20px; /* Add padding to create space for dropdown */
+}
+
+/* Style for the problems dropdown */
+.problems-dropdown .dropdown-title {
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+}
+
+.problems-dropdown.active .dropdown-title {
+  background-color: #2980b9;
+}
+
+/* Style for the dynamic programming dropdown */
+.dynamic-programming-dropdown .dropdown-title {
+  background-color: #27ae60;
+  color: white;
+  border-radius: 4px;
+}
+
+.dynamic-programming-dropdown:hover .dropdown-title {
+  background-color: #219653;
 }
 
 /* Make submenu items more compact */
@@ -176,7 +222,9 @@
   z-index: 1000;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content,
+.dropdown-content.show {
   display: block;
 }
 
@@ -274,7 +322,9 @@
   transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown.active .dropdown-content,
+.dropdown-content.show {
   transform: translateY(0);
 }
 

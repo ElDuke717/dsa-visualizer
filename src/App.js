@@ -7,6 +7,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Navbar from "./components/Navigation/Navbar";
+import Footer from "./components/Footer/Footer";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import BFSPage from "./pages/BFS/BFSPage";
 import DFSPage from "./pages/DFS/DFSPage";
 import SinglyLinkedListPage from "./pages/LinkedList/SinglyLinkedListPage";
@@ -53,7 +55,8 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Navigate to="/bfs" replace />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<LandingPage />} />
 
             <Route path="/graph/basic" element={<BasicGraphPage />} />
             <Route path="/graph/bfs" element={<BFSPage />} />
@@ -117,6 +120,7 @@ function App() {
 
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );

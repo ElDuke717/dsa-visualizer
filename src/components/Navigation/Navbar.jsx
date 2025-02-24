@@ -1,9 +1,30 @@
 // src/components/Navigation/Navbar.jsx
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+    const [problemsDropdownOpen, setProblemsDropdownOpen] = useState(false);
+    const problemsDropdownRef = useRef(null);
+    
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (problemsDropdownRef.current && !problemsDropdownRef.current.contains(event.target)) {
+                setProblemsDropdownOpen(false);
+            }
+        };
+        
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+    
+    const toggleProblemsDropdown = (e) => {
+        e.preventDefault();
+        setProblemsDropdownOpen(!problemsDropdownOpen);
+    };
     const problems = {
         Graphs: [
           { title: "Number of Islands", path: "/problems/graphs/number-of-islands", difficulty: "Medium" },
@@ -36,7 +57,7 @@ const Navbar = () => {
       };
   return (
     <nav className="navbar">
-      <div className="navbar-brand">Data Structures & Algorithms</div>
+      <NavLink to="/home" className="navbar-brand">Data Structures & Algorithms</NavLink>
       <ul className="nav-links">
         <li className="dropdown">
           <span className="dropdown-title">Graph</span>
@@ -45,6 +66,34 @@ const Navbar = () => {
             <NavLink to="/graph/bfs">BFS</NavLink>
             <NavLink to="/graph/dfs">DFS</NavLink>
           </div>
+        </li>
+        <li className={`dropdown problems-dropdown ${problemsDropdownOpen ? 'active' : ''}`} ref={problemsDropdownRef}>
+        <div className="dropdown-trigger" onClick={toggleProblemsDropdown}>
+            <span className="dropdown-title">Problems Menu</span>
+        </div>
+        <div className={`dropdown-content ${problemsDropdownOpen ? 'show' : ''}`}>
+            <div className="dropdown-inner">
+            {Object.entries(problems).map(([category, problemList]) => (
+                <div key={category} className="submenu">
+                <span className="submenu-title">{category}</span>
+                <div className="problem-category">
+                    {problemList.map(problem => (
+                    <NavLink 
+                        key={problem.path} 
+                        to={problem.path}
+                        className="problem-link"
+                    >
+                        <span className="problem-title">{problem.title}</span>
+                        <span className={`difficulty-tag ${problem.difficulty.toLowerCase()}`}>
+                        {problem.difficulty}
+                        </span>
+                    </NavLink>
+                    ))}
+                </div>
+                </div>
+            ))}
+            </div>
+        </div>
         </li>
         <li className="dropdown">
           <span className="dropdown-title">Linked List</span>
@@ -79,7 +128,7 @@ const Navbar = () => {
           <NavLink to="/hash-table" className="nav-link">Hash Table</NavLink>
         </span>
         </li>
-        <li className="dropdown">
+        <li className="dropdown dynamic-programming-dropdown">
         <span className="dropdown-title">Dynamic Programming</span>
         <div className="dropdown-content">
             <NavLink to="/dp/sliding-window">Sliding Window</NavLink>
@@ -87,34 +136,6 @@ const Navbar = () => {
             <NavLink to="/dp/backtracking">Backtracking</NavLink>
             <NavLink to="/dp/tabulation">Tabulation</NavLink>
             <NavLink to="/dp/memoization">Memoization</NavLink>
-        </div>
-        </li>
-        <li className="dropdown">
-        <div className="dropdown-trigger">
-            <span className="dropdown-title">Problems</span>
-        </div>
-        <div className="dropdown-content">
-            <div className="dropdown-inner">
-            {Object.entries(problems).map(([category, problemList]) => (
-                <div key={category} className="submenu">
-                <span className="submenu-title">{category}</span>
-                <div className="problem-category">
-                    {problemList.map(problem => (
-                    <NavLink 
-                        key={problem.path} 
-                        to={problem.path}
-                        className="problem-link"
-                    >
-                        <span className="problem-title">{problem.title}</span>
-                        <span className={`difficulty-tag ${problem.difficulty.toLowerCase()}`}>
-                        {problem.difficulty}
-                        </span>
-                    </NavLink>
-                    ))}
-                </div>
-                </div>
-            ))}
-            </div>
         </div>
         </li>
       </ul>
