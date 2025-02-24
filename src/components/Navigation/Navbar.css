@@ -84,8 +84,8 @@
   visibility: hidden;
 }
 
-/* Show dropdown on hover for all dropdowns except the problems dropdown */
-.dropdown:not(.problems-dropdown):hover .dropdown-content {
+/* Show dropdown on hover for all dropdowns except the problems and dynamic programming dropdowns */
+.dropdown:not(.problems-dropdown):not(.dynamic-programming-dropdown):hover .dropdown-content {
   display: block;
   opacity: 1;
   visibility: visible;

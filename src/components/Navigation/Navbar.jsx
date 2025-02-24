@@ -5,13 +5,18 @@ import "./Navbar.css";
 
 const Navbar = () => {
     const [problemsDropdownOpen, setProblemsDropdownOpen] = useState(false);
+    const [dpDropdownOpen, setDpDropdownOpen] = useState(false);
     const problemsDropdownRef = useRef(null);
+    const dpDropdownRef = useRef(null);
     
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (problemsDropdownRef.current && !problemsDropdownRef.current.contains(event.target)) {
                 setProblemsDropdownOpen(false);
+            }
+            if (dpDropdownRef.current && !dpDropdownRef.current.contains(event.target)) {
+                setDpDropdownOpen(false);
             }
         };
         
@@ -24,6 +29,11 @@ const Navbar = () => {
     const toggleProblemsDropdown = (e) => {
         e.preventDefault();
         setProblemsDropdownOpen(!problemsDropdownOpen);
+    };
+    
+    const toggleDpDropdown = (e) => {
+        e.preventDefault();
+        setDpDropdownOpen(!dpDropdownOpen);
     };
     const problems = {
         Graphs: [
@@ -128,9 +138,11 @@ const Navbar = () => {
           <NavLink to="/hash-table" className="nav-link">Hash Table</NavLink>
         </span>
         </li>
-        <li className="dropdown dynamic-programming-dropdown">
-        <span className="dropdown-title">Dynamic Programming</span>
-        <div className="dropdown-content">
+        <li className={`dropdown dynamic-programming-dropdown ${dpDropdownOpen ? 'active' : ''}`} ref={dpDropdownRef}>
+        <div className="dropdown-trigger" onClick={toggleDpDropdown}>
+            <span className="dropdown-title">Dynamic Programming</span>
+        </div>
+        <div className={`dropdown-content ${dpDropdownOpen ? 'show' : ''}`}>
             <NavLink to="/dp/sliding-window">Sliding Window</NavLink>
             <NavLink to="/dp/two-pointers">Two Pointers</NavLink>
             <NavLink to="/dp/backtracking">Backtracking</NavLink>
