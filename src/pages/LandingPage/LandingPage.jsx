@@ -12,7 +12,7 @@ const LandingPage = () => {
       </header>
 
       <section className="app-description">
-        <h2>About This Application</h2>
+        <h2>About</h2>
         <p>
           Welcome to the Data Structures & Algorithms Visualizer! This
           interactive tool is designed to help you understand complex DSA

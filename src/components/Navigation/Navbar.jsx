@@ -41,7 +41,8 @@ const Navbar = () => {
           { title: "Max Area of Island", path: "/problems/graphs/max-area-island", difficulty: "Medium" },
           { title: "Employee Importance", path: "/problems/graphs/employee-importance", difficulty: "Medium" },
           { title: "Clone Graph", path: "/problems/graphs/clone-graph", difficulty: "Medium" },
-          { title: "Surrounded Regions", path: "/problems/graphs/surrounded-regions", difficulty: "Medium" }
+          { title: "Surrounded Regions", path: "/problems/graphs/surrounded-regions", difficulty: "Medium" },
+          { title: "Open The Lock", path: "/problems/graphs/open-the-lock", difficulty: "Medium" }
 
         ],
         Trees: [
@@ -75,6 +76,7 @@ const Navbar = () => {
             <NavLink to="/graph/basic">Basic Graph</NavLink>
             <NavLink to="/graph/bfs">BFS</NavLink>
             <NavLink to="/graph/dfs">DFS</NavLink>
+            <NavLink to="/graph/dijkstra">Dijkstra's Algorithm</NavLink>
           </div>
         </li>
         <li className={`dropdown problems-dropdown ${problemsDropdownOpen ? 'active' : ''}`} ref={problemsDropdownRef}>

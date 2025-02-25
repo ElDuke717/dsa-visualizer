@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import BFSPage from "./pages/BFS/BFSPage";
 import DFSPage from "./pages/DFS/DFSPage";
+import DijkstraPage from "./pages/Graph/DijkstraPage";
 import SinglyLinkedListPage from "./pages/LinkedList/SinglyLinkedListPage";
 import DoublyLinkedListPage from "./pages/LinkedList/DoublyLinkedListPage";
 import BasicGraphPage from "./pages/Graph/BasicGraphPage";
@@ -38,6 +39,7 @@ import MaxAreaIsland from "./pages/Problems/Graphs/MaxAreaIsland";
 import EmployeeImportance from './pages/Problems/Graphs/EmployeeImportance';
 import CloneGraph from './pages/Problems/Graphs/CloneGraph';
 import SurroundedRegions from './pages/Problems/Graphs/SurroundedRegions';
+import OpenTheLock from './pages/Problems/Graphs/OpenTheLock';
 import LevelOrderTraversal from "./pages/Problems/Trees/LevelOrderTraversal";
 import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
@@ -61,6 +63,7 @@ function App() {
             <Route path="/graph/basic" element={<BasicGraphPage />} />
             <Route path="/graph/bfs" element={<BFSPage />} />
             <Route path="/graph/dfs" element={<DFSPage />} />
+            <Route path="/graph/dijkstra" element={<DijkstraPage />} />
             <Route
               path="/linked-list/singly"
               element={<SinglyLinkedListPage />}
@@ -97,6 +100,7 @@ function App() {
             <Route path="/problems/graphs/employee-importance" element={<EmployeeImportance />} />
             <Route path="/problems/graphs/clone-graph" element={<CloneGraph />} />
             <Route path="/problems/graphs/surrounded-regions" element={<SurroundedRegions />} />
+            <Route path="/problems/graphs/open-the-lock" element={<OpenTheLock />} />
             <Route
               path="/problems/trees/level-order"
               element={<LevelOrderTraversal />}
