@@ -123,42 +123,42 @@ const OpenTheLock = () => {
   const implementations = {
     javascript: `
 function openLock(deadends, target) {
-  const deadendSet = new Set(deadends);
-  if (deadendSet.has('0000')) return -1;
-  if (target === '0000') return 0;
-  
-  const queue = [['0000', 0]]; // [code, steps]
-  const visited = new Set(['0000']);
-  
-  while (queue.length > 0) {
-    const [code, moves] = queue.shift();
+  const deadendSet = new Set(deadends); // Convert the deadends to a Set for faster look-ups
+    if (deadendSet.has('0000')) return -1;  // '0000'  won't allow the rotation to start, so return -1
+    if (target === '0000') return 0; // Already at target
     
-    if (code === target) return moves;
+    const queue = [['0000', 0]]; // [code, steps] 
+    const visited = new Set(['0000']);
     
-    // Generate all possible next states
-    for (let i = 0; i < 4; i++) {
-      const digit = parseInt(code[i]);
+    while (queue.length > 0) {
+        const [code, moves] = queue.shift(); // Get the next combination to check, the queue fills up with combinations and moves taken 
+        
+        if (code === target) return moves; // return the moves needed to reach the combination
+        
+        // Generate all possible next combinations by turning one wheel at a time, 4 positions x 2 directions = 8 possible combinations
+        for (let i = 0; i < 4; i++) {
+        const digit = parseInt(code[i]);
       
-      // Turn digit up
-      const up = (digit === 9) ? 0 : digit + 1;
-      const upCode = code.substring(0, i) + up + code.substring(i + 1);
-      
-      // Turn digit down
-      const down = (digit === 0) ? 9 : digit - 1;
-      const downCode = code.substring(0, i) + down + code.substring(i + 1);
-      
-      // Check and add neighbors
-      for (const neighbor of [upCode, downCode]) {
-        if (!visited.has(neighbor) && !deadendSet.has(neighbor)) {
-          visited.add(neighbor);
-          queue.push([neighbor, moves + 1]);
+        // Turn digit up
+        const up = (digit === 9) ? 0 : digit + 1;
+        const upCode = code.substring(0, i) + up + code.substring(i + 1); // Builds a new string with the modified digit
+        
+        // Turn digit down
+        const down = (digit === 0) ? 9 : digit - 1;
+        const downCode = code.substring(0, i) + down + code.substring(i + 1); // Similar to above, but with the digit turned down
+        
+        // Check and add neighbors to the queue
+        for (const neighbor of [upCode, downCode]) {
+            if (!visited.has(neighbor) && !deadendSet.has(neighbor)) { // Check if the neighbor is not a deadend and hasn't been visited
+            visited.add(neighbor); // Mark the neighbor as visited
+            queue.push([neighbor, moves + 1]); // Add the neighbor to the queue with the moves taken
+            }
         }
-      }
     }
   }
   
   return -1; // If we can't reach the target
-}`,
+};`,
     python: `
 def openLock(deadends, target):
     deadends = set(deadends)
