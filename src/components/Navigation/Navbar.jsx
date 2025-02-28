@@ -51,7 +51,8 @@ const Navbar = () => {
           { title: "Lowest Common Ancestor", path: "/problems/trees/lowest-common-ancestor", difficulty: "Medium" }
         ],
         "Sliding Window": [
-          { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" }
+          { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" },
+          { title: "Maximum Vowels", path: "/problems/sliding-window/max-vowels", difficulty: "Medium" }
         ],
         "Two Pointers": [
           { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" }
