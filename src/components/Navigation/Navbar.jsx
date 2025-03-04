@@ -52,7 +52,8 @@ const Navbar = () => {
         ],
         "Sliding Window": [
           { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" },
-          { title: "Maximum Vowels", path: "/problems/sliding-window/max-vowels", difficulty: "Medium" }
+          { title: "Maximum Vowels", path: "/problems/sliding-window/max-vowels", difficulty: "Medium" },
+          { title: "Diet Plan Performance", path: "/problems/sliding-window/diet-plan-performance", difficulty: "Easy" }
         ],
         "Two Pointers": [
           { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" }

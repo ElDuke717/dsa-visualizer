@@ -21,6 +21,11 @@
   font-weight: bold;
 }
 
+.difficulty.easy {
+  background-color: #5cb85c;
+  color: white;
+}
+
 .difficulty.medium {
   background-color: #ffa116;
   color: white;

@@ -45,6 +45,7 @@ import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
 import LongestSubstring from "./pages/Problems/SlidingWindow/LongestSubstring";
 import MaxVowels from "./pages/Problems/SlidingWindow/MaxVowels";
+import DietPlanPerformance from "./pages/Problems/SlidingWindow/DietPlanPerformance";
 import TwoSum from './pages/Problems/TwoPointers/TwoSum';
 import Subsets from './pages/Problems/Backtracking/Subsets';
 import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
@@ -121,6 +122,10 @@ function App() {
             <Route
               path="problems/sliding-window/max-vowels"
               element={<MaxVowels />}
+            />
+            <Route
+              path="problems/sliding-window/diet-plan-performance"
+              element={<DietPlanPerformance />}
             />
             <Route path="/problems/two-pointers/two-sum" element={<TwoSum />} />
             <Route path="/problems/backtracking/subsets" element={<Subsets />} />
