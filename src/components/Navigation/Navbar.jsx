@@ -58,7 +58,9 @@ const Navbar = () => {
           { title: "Contains Duplicate II", path: "/problems/sliding-window/contains-duplicate-ii", difficulty: "Easy" }
         ],
         "Two Pointers": [
-          { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" }
+          { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" },
+          { title: "Move Zeroes", path: "/problems/two-pointers/move-zeroes", difficulty: "Easy" },
+          { title: "Valid Palindrome", path: "/problems/two-pointers/valid-palindrome", difficulty: "Easy" }
         ],
         Backtracking: [
           { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" }
