@@ -51,6 +51,7 @@ import ContainsDuplicateII from "./pages/Problems/SlidingWindow/ContainsDuplicat
 import TwoSum from './pages/Problems/TwoPointers/TwoSum';
 import MoveZeroes from './pages/Problems/TwoPointers/MoveZeroes';
 import ValidPalindrome from './pages/Problems/TwoPointers/ValidPalindrome';
+import ThreeSum from './pages/Problems/TwoPointers/ThreeSum';
 import Subsets from './pages/Problems/Backtracking/Subsets';
 import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
 import Cycle from './pages/Problems/LinkedLists/Cycle';
@@ -142,6 +143,7 @@ function App() {
             <Route path="/problems/two-pointers/two-sum" element={<TwoSum />} />
             <Route path="/problems/two-pointers/move-zeroes" element={<MoveZeroes />} />
             <Route path="/problems/two-pointers/valid-palindrome" element={<ValidPalindrome />} />
+            <Route path="/problems/two-pointers/three-sum" element={<ThreeSum />} />
             <Route path="/problems/backtracking/subsets" element={<Subsets />} />
             <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
