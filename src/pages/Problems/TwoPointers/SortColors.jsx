@@ -162,27 +162,40 @@ const SortColors = () => {
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
+// Sort in place, arrange numbers in chronological order
+// Use an approach that uses three pointers, a variant on two pointers
+// Make three regions, a pointer called low that will be the boundary for zeroes
+// A mid region that scans through the array (iterates using a loop)
+// A high pointer that marks the boundary before all twos
+// Iterate with the mid pointer
+// If element at pointer is a zero, swap it with the element at the low pointer and move low and mid together
+// If element is a two, swap with element at the high pointer and move the high pointer backward - do not move mid immediately
+// If you encounter a one, move mid forward
+// Continue until mid passes high
+
 var sortColors = function(nums) {
-    // Dutch national flag problem
-    // Use three pointers: p0, curr, and p2
-    let p0 = 0; // pointer for 0
-    let curr = 0; // current pointer
-    let p2 = nums.length - 1; // pointer for 2
-    
-    while (curr <= p2) {
-        if (nums[curr] === 0) {
-            // If current element is 0, swap with p0 and increment both pointers
-            [nums[p0], nums[curr]] = [nums[curr], nums[p0]];
-            p0++;
-            curr++;
-        } else if (nums[curr] === 2) {
-            // If current element is 2, swap with p2 and decrement p2
-            [nums[curr], nums[p2]] = [nums[p2], nums[curr]];
-            p2--;
-            // Note: curr is not incremented here as we need to check the swapped element
+    // First pointer, low, is the index of the end of the zero region
+    let low = 0;
+    // Mid pointer starts at zero
+    let mid = 0;
+    //  Third pointer, high, is the index of the left edge of the twos region
+    let high = nums.length - 1;
+    // Iterate through the nums array with a while loop
+    while (mid <= high) {
+        if (nums[mid] === 0) {
+            // Swap nums[low] and nums[high] 
+            [nums[low ], nums[mid]] = [nums[mid], nums[low]];
+            // Increment low and mid
+            low+=1;
+            mid+=1;
+        } else if (nums[mid] === 1) {
+            // Increment mid
+            mid += 1;
         } else {
-            // If current element is 1, just move forward
-            curr++;
+            [nums[mid], nums[high]] = [nums[high], nums[mid]];
+            // Decrement high
+            high-=1;
+            // Note: DO NOT increment mid here. The swapped element at mid needs to be processed in the next iteration
         }
     }
 };`,
