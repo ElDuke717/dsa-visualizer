@@ -512,3 +512,28 @@
   background-color: #4caf50;
   color: white;
 }
+
+/* Color classes for Sort Colors problem */
+.array-cell.color-red {
+  background-color: #ffcdd2;
+  border-color: #e57373;
+}
+
+.array-cell.color-white {
+  background-color: #f5f5f5;
+  border-color: #e0e0e0;
+}
+
+.array-cell.color-blue {
+  background-color: #bbdefb;
+  border-color: #64b5f6;
+}
+
+.array-cell.i-pointer {
+  border-color: #673ab7;
+  background-color: #ede7f6;
+}
+
+.array-cell.current-triplet {
+  border-width: 3px;
+}

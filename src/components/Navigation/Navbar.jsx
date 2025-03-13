@@ -61,7 +61,8 @@ const Navbar = () => {
           { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" },
           { title: "Move Zeroes", path: "/problems/two-pointers/move-zeroes", difficulty: "Easy" },
           { title: "Valid Palindrome", path: "/problems/two-pointers/valid-palindrome", difficulty: "Easy" },
-          { title: "3Sum", path: "/problems/two-pointers/three-sum", difficulty: "Medium" }
+          { title: "3Sum", path: "/problems/two-pointers/three-sum", difficulty: "Medium" },
+          { title: "Sort Colors", path: "/problems/two-pointers/sort-colors", difficulty: "Medium" }
         ],
         Backtracking: [
           { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" }
