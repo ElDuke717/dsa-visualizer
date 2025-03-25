@@ -281,6 +281,8 @@ def solve_n_queens(n):
             <li>Combination Sum</li>
             <li>Permutations</li>
             <li>Subset Sum</li>
+            <li><a href="/problems/backtracking/subsets">Subsets</a></li>
+            <li><a href="/problems/backtracking/binary-watch">Binary Watch</a></li>
           </ul>
 
           <h3>Key Concepts:</h3>

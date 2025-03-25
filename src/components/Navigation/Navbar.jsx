@@ -48,7 +48,8 @@ const Navbar = () => {
         Trees: [
           { title: "Level Order Traversal", path: "/problems/trees/level-order", difficulty: "Medium" },
           { title: "Maximum Depth", path: "/problems/trees/max-depth", difficulty: "Easy" },
-          { title: "Lowest Common Ancestor", path: "/problems/trees/lowest-common-ancestor", difficulty: "Medium" }
+          { title: "Lowest Common Ancestor", path: "/problems/trees/lowest-common-ancestor", difficulty: "Medium" },
+          { title: "Binary Tree Paths", path: "/problems/trees/binary-tree-paths", difficulty: "Easy" }
         ],
         "Sliding Window": [
           { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" },
@@ -65,7 +66,9 @@ const Navbar = () => {
           { title: "Sort Colors", path: "/problems/two-pointers/sort-colors", difficulty: "Medium" }
         ],
         Backtracking: [
-          { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" }
+          { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" },
+          { title: "Binary Watch", path: "/problems/backtracking/binary-watch", difficulty: "Easy" },
+          { title: "Letter Combinations", path: "/problems/backtracking/letter-combinations", difficulty: "Medium" }
         ],
         "Dynamic Programming": [
           { title: "Climbing Stairs", path: "/problems/dp/climbing-stairs", difficulty: "Easy" }

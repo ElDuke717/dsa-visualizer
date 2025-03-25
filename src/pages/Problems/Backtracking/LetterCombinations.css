@@ -1,0 +1,190 @@
+/* src/pages/Problems/Backtracking/LetterCombinations.css */
+
+.phone-keypad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.keypad-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.key {
+  width: 60px;
+  height: 60px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.letters {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.letter-combinations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.digits-display {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.digit {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.digit.current {
+  background-color: #4caf50;
+  color: white;
+}
+
+.current-combination {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.combination-text {
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.combinations-grid {
+  margin-top: 20px;
+}
+
+.combinations-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.combination-item {
+  padding: 8px 12px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.combination-item.current-combination {
+  background-color: #2196f3;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group label {
+  min-width: 150px;
+  font-weight: bold;
+}
+
+.input-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  padding: 10px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button-group button:hover {
+  background-color: #0b7dda;
+}
+
+.button-group button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.lang-button {
+  padding: 8px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.lang-button.active {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}

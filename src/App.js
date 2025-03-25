@@ -43,6 +43,7 @@ import OpenTheLock from './pages/Problems/Graphs/OpenTheLock';
 import LevelOrderTraversal from "./pages/Problems/Trees/LevelOrderTraversal";
 import MaximumDepth from "./pages/Problems/Trees/MaximumDepth";
 import LowestCommonAncestor from "./pages/Problems/Trees/LowestCommonAncestor";
+import BinaryTreePaths from "./pages/Problems/Trees/BinaryTreePaths";
 import LongestSubstring from "./pages/Problems/SlidingWindow/LongestSubstring";
 import MaxVowels from "./pages/Problems/SlidingWindow/MaxVowels";
 import DietPlanPerformance from "./pages/Problems/SlidingWindow/DietPlanPerformance";
@@ -54,6 +55,8 @@ import ValidPalindrome from './pages/Problems/TwoPointers/ValidPalindrome';
 import ThreeSum from './pages/Problems/TwoPointers/ThreeSum';
 import SortColors from './pages/Problems/TwoPointers/SortColors';
 import Subsets from './pages/Problems/Backtracking/Subsets';
+import BinaryWatch from './pages/Problems/Backtracking/BinaryWatch';
+import LetterCombinations from './pages/Problems/Backtracking/LetterCombinations';
 import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
 import Cycle from './pages/Problems/LinkedLists/Cycle';
 import "./App.css";
@@ -122,6 +125,10 @@ function App() {
               element={<LowestCommonAncestor />}
             />
             <Route
+              path="/problems/trees/binary-tree-paths"
+              element={<BinaryTreePaths />}
+            />
+            <Route
               path="problems/sliding-window/longest-substring"
               element={<LongestSubstring />}
             />
@@ -147,6 +154,8 @@ function App() {
             <Route path="/problems/two-pointers/three-sum" element={<ThreeSum />} />
             <Route path="/problems/two-pointers/sort-colors" element={<SortColors />} />
             <Route path="/problems/backtracking/subsets" element={<Subsets />} />
+            <Route path="/problems/backtracking/binary-watch" element={<BinaryWatch />} />
+            <Route path="/problems/backtracking/letter-combinations" element={<LetterCombinations />} />
             <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
 
