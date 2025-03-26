@@ -1,5 +1,5 @@
 // src/pages/DynamicProgramming/BacktrackingPage.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BacktrackingVisualizer from "../../components/DataStructureVisualizer/BacktrackingVisualizer";
 import CodeSnippet from "../../components/CodeSnippet/CodeSnippet";
 import "./DynamicProgramming.css";
@@ -16,6 +16,17 @@ const BacktrackingPage = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [speed, setSpeed] = useState(1000);
   const [language, setLanguage] = useState("javascript");
+
+  // Add useEffect to update board when boardSize changes
+  useEffect(() => {
+    setBoard(
+      Array(boardSize)
+        .fill()
+        .map(() => Array(boardSize).fill(0))
+    );
+    setCurrentRow(null);
+    setCurrentCol(null);
+  }, [boardSize]);
 
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -185,31 +196,44 @@ def solve_n_queens(n):
   return (
     <div className="page-container">
       <h1>Backtracking Pattern</h1>
+      <p>
+        Backtracking is a general algorithmic technique for finding all (or
+        some) solutions to computational problems, notably constraint
+        satisfaction problems. It incrementally builds candidates to the
+        solutions and abandons a candidate ("backtracks") as soon as it
+        determines that the candidate cannot possibly be completed to a valid
+        solution. This systematic approach explores the search space, often
+        visualized as a tree, pruning branches that violate constraints. It's
+        commonly used for problems like generating permutations, combinations,
+        solving puzzles (e.g., Sudoku, N-Queens), and pathfinding.
+      </p>
       <h2>N-Queens Problem</h2>
-    <p>
-      The N-Queens problem involves placing <strong>N</strong> queens on an <strong>N x N</strong> chessboard
-      such that no two queens threaten each other. This means:
-    </p>
-    <ul>
-      <li>No two queens can be in the same row.</li>
-      <li>No two queens can be in the same column.</li>
-      <li>No two queens can be on the same diagonal.</li>
-    </ul>
-    <h3>Objective:</h3>
-    <p>
-      Find all possible arrangements of the queens on the chessboard or determine if at least one solution
-      exists for a given <strong>N</strong>.
-    </p>
-    <h3>Example:</h3>
-    <pre>
-      {`
+      <p>
+        The N-Queens problem involves placing <strong>N</strong> queens on an{" "}
+        <strong>N x N</strong> chessboard such that no two queens threaten each
+        other. This means:
+      </p>
+      <ul>
+        <li>No two queens can be in the same row.</li>
+        <li>No two queens can be in the same column.</li>
+        <li>No two queens can be on the same diagonal.</li>
+      </ul>
+      <h3>Objective:</h3>
+      <p>
+        Find all possible arrangements of the queens on the chessboard or
+        determine if at least one solution exists for a given{" "}
+        <strong>N</strong>.
+      </p>
+      <h3>Example:</h3>
+      <pre>
+        {`
         For N = 4, one possible solution is:
         . Q . .
         . . . Q
         Q . . .
         . . Q .
       `}
-    </pre>
+      </pre>
       <section className="visualization">
         <BacktrackingVisualizer
           board={board}
@@ -228,7 +252,7 @@ def solve_n_queens(n):
               onChange={(e) => {
                 const size = Number(e.target.value);
                 setBoardSize(size);
-                resetBoard();
+                // Board will be updated via useEffect
               }}
               disabled={isRunning}
             />
@@ -258,9 +282,9 @@ def solve_n_queens(n):
       <section className="explanation">
         <h2>Backtracking Pattern</h2>
         <p>
-          Backtracking is an algorithmic technique that considers searching
-          every possible combination in order to solve a computational problem.
-          It builds candidates to the solution incrementally and abandons each
+          Backtracking is an algorithmic technique that considers searching every
+          possible combination in order to solve a computational problem. It
+          builds candidates to the solution incrementally and abandons each
           partial candidate ("backtracks") if it determines that the candidate
           cannot possibly be completed to a valid solution.
         </p>
@@ -278,11 +302,15 @@ def solve_n_queens(n):
           <ul>
             <li>N-Queens Problem</li>
             <li>Sudoku Solver</li>
-            <li><a href="/problems/backtracking/combination-sum">Combination Sum</a></li>
+            <li>Combination Sum</li>
             <li>Permutations</li>
             <li>Subset Sum</li>
-            <li><a href="/problems/backtracking/subsets">Subsets</a></li>
-            <li><a href="/problems/backtracking/binary-watch">Binary Watch</a></li>
+            <li>
+              <a href="/problems/backtracking/subsets">Subsets</a>
+            </li>
+            <li>
+              <a href="/problems/backtracking/binary-watch">Binary Watch</a>
+            </li>
           </ul>
 
           <h3>Key Concepts:</h3>

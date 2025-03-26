@@ -1,67 +1,49 @@
 // src/components/DataStructureVisualizer/BacktrackingVisualizer.jsx
-import React from 'react';
-import './BacktrackingVisualizer.css';
+import React from "react";
+import "./BacktrackingVisualizer.css";
 
-const BacktrackingVisualizer = ({
-  board,
-  currentRow = null,
-  currentCol = null,
-  size = 4,
-  width = 400,
-  height = 400
-}) => {
-  const cellSize = Math.min(width, height) / size;
+const BacktrackingVisualizer = ({ board, currentRow, currentCol, size }) => {
+  // Add safety check to prevent errors when board is not properly initialized
+  if (!board || board.length === 0 || board.length !== size) {
+    // Return empty board with correct dimensions
+    const emptyBoard = Array(size)
+      .fill()
+      .map(() => Array(size).fill(0));
+      
+    return (
+      <div className="n-queens-board">
+        {emptyBoard.map((row, rowIndex) => (
+          <div key={rowIndex} className="board-row">
+            {row.map((_, colIndex) => (
+              <div
+                key={colIndex}
+                className={`board-cell ${
+                  (rowIndex + colIndex) % 2 === 0 ? "light" : "dark"
+                }`}
+              ></div>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <div className="backtracking-visualizer">
-      <svg width={width} height={height}>
-        {/* Draw chessboard */}
-        {Array.from({ length: size }, (_, row) => (
-          Array.from({ length: size }, (_, col) => {
-            const x = col * cellSize;
-            const y = row * cellSize;
-            const isCurrentCell = row === currentRow && col === currentCol;
-            const hasQueen = board[row][col] === 1;
-            const isDarkSquare = (row + col) % 2 === 1;
-
-            return (
-              <g key={`${row}-${col}`}>
-                {/* Chess square */}
-                <rect
-                  x={x}
-                  y={y}
-                  width={cellSize}
-                  height={cellSize}
-                  fill={isDarkSquare ? '#b58863' : '#f0d9b5'}
-                  stroke={isCurrentCell ? '#ff0000' : '#000'}
-                  strokeWidth={isCurrentCell ? 2 : 0.5}
-                />
-                {/* Queen */}
-                {hasQueen && (
-                  <g transform={`translate(${x + cellSize/2}, ${y + cellSize/2})`}>
-                    <circle
-                      r={cellSize * 0.3}
-                      fill={isDarkSquare ? '#000' : '#000'}
-                      stroke="#fff"
-                      strokeWidth="2"
-                    />
-                    <text
-                      x="0"
-                      y="2"
-                      textAnchor="middle"
-                      alignmentBaseline="middle"
-                      fill="#fff"
-                      fontSize={cellSize * 0.3}
-                    >
-                      ♕
-                    </text>
-                  </g>
-                )}
-              </g>
-            );
-          })
-        ))}
-      </svg>
+    <div className="n-queens-board">
+      {board.map((row, rowIndex) => (
+        <div key={rowIndex} className="board-row">
+          {row.map((cell, colIndex) => (
+            <div
+              key={colIndex}
+              className={`board-cell ${
+                (rowIndex + colIndex) % 2 === 0 ? "light" : "dark"
+              } ${rowIndex === currentRow && colIndex === currentCol ? "current" : ""}`}
+            >
+              {cell === 1 && <div className="queen">♕</div>}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
