@@ -9,6 +9,7 @@ import {
 import Navbar from "./components/Navigation/Navbar";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import DataStructuresOverviewPage from "./pages/DataStructuresOverview/DataStructuresOverviewPage";
 import BFSPage from "./pages/BFS/BFSPage";
 import DFSPage from "./pages/DFS/DFSPage";
 import DijkstraPage from "./pages/Graph/DijkstraPage";
@@ -57,7 +58,11 @@ import SortColors from './pages/Problems/TwoPointers/SortColors';
 import Subsets from './pages/Problems/Backtracking/Subsets';
 import BinaryWatch from './pages/Problems/Backtracking/BinaryWatch';
 import LetterCombinations from './pages/Problems/Backtracking/LetterCombinations';
+import Permutations from './pages/Problems/Backtracking/Permutations';
+import CombinationSum from './pages/Problems/Backtracking/CombinationSum';
 import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
+import BestTimeToBuyAndSellStock from './pages/Problems/DP/BestTimeToBuyAndSellStock';
+import MaximumSubarray from './pages/Problems/DP/MaximumSubarray';
 import Cycle from './pages/Problems/LinkedLists/Cycle';
 import "./App.css";
 
@@ -70,6 +75,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<LandingPage />} />
+            <Route path="/data-structures-overview" element={<DataStructuresOverviewPage />} />
 
             <Route path="/graph/basic" element={<BasicGraphPage />} />
             <Route path="/graph/bfs" element={<BFSPage />} />
@@ -156,7 +162,11 @@ function App() {
             <Route path="/problems/backtracking/subsets" element={<Subsets />} />
             <Route path="/problems/backtracking/binary-watch" element={<BinaryWatch />} />
             <Route path="/problems/backtracking/letter-combinations" element={<LetterCombinations />} />
+            <Route path="/problems/backtracking/permutations" element={<Permutations />} />
+            <Route path="/problems/backtracking/combination-sum" element={<CombinationSum />} />
             <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
+            <Route path="/problems/dp/best-time-to-buy-and-sell-stock" element={<BestTimeToBuyAndSellStock />} />
+            <Route path="/problems/dp/maximum-subarray" element={<MaximumSubarray />} />
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
 
           </Routes>

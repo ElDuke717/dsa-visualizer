@@ -4,83 +4,91 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const [problemsDropdownOpen, setProblemsDropdownOpen] = useState(false);
-    const [dpDropdownOpen, setDpDropdownOpen] = useState(false);
-    const problemsDropdownRef = useRef(null);
-    const dpDropdownRef = useRef(null);
-    
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (problemsDropdownRef.current && !problemsDropdownRef.current.contains(event.target)) {
-                setProblemsDropdownOpen(false);
-            }
-            if (dpDropdownRef.current && !dpDropdownRef.current.contains(event.target)) {
-                setDpDropdownOpen(false);
-            }
-        };
-        
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-    
-    const toggleProblemsDropdown = (e) => {
-        e.preventDefault();
-        setProblemsDropdownOpen(!problemsDropdownOpen);
-    };
-    
-    const toggleDpDropdown = (e) => {
-        e.preventDefault();
-        setDpDropdownOpen(!dpDropdownOpen);
-    };
-    const problems = {
-        Graphs: [
-          { title: "Number of Islands", path: "/problems/graphs/number-of-islands", difficulty: "Medium" },
-          { title: "Max Area of Island", path: "/problems/graphs/max-area-island", difficulty: "Medium" },
-          { title: "Employee Importance", path: "/problems/graphs/employee-importance", difficulty: "Medium" },
-          { title: "Clone Graph", path: "/problems/graphs/clone-graph", difficulty: "Medium" },
-          { title: "Surrounded Regions", path: "/problems/graphs/surrounded-regions", difficulty: "Medium" },
-          { title: "Open The Lock", path: "/problems/graphs/open-the-lock", difficulty: "Medium" }
+  const [problemsDropdownOpen, setProblemsDropdownOpen] = useState(false);
+  const [dpDropdownOpen, setDpDropdownOpen] = useState(false);
+  const problemsDropdownRef = useRef(null);
+  const dpDropdownRef = useRef(null);
 
-        ],
-        Trees: [
-          { title: "Level Order Traversal", path: "/problems/trees/level-order", difficulty: "Medium" },
-          { title: "Maximum Depth", path: "/problems/trees/max-depth", difficulty: "Easy" },
-          { title: "Lowest Common Ancestor", path: "/problems/trees/lowest-common-ancestor", difficulty: "Medium" },
-          { title: "Binary Tree Paths", path: "/problems/trees/binary-tree-paths", difficulty: "Easy" }
-        ],
-        "Sliding Window": [
-          { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" },
-          { title: "Maximum Vowels", path: "/problems/sliding-window/max-vowels", difficulty: "Medium" },
-          { title: "Diet Plan Performance", path: "/problems/sliding-window/diet-plan-performance", difficulty: "Easy" },
-          { title: "Maximum Average Subarray I", path: "/problems/sliding-window/maximum-average-subarray", difficulty: "Easy" },
-          { title: "Contains Duplicate II", path: "/problems/sliding-window/contains-duplicate-ii", difficulty: "Easy" }
-        ],
-        "Two Pointers": [
-          { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" },
-          { title: "Move Zeroes", path: "/problems/two-pointers/move-zeroes", difficulty: "Easy" },
-          { title: "Valid Palindrome", path: "/problems/two-pointers/valid-palindrome", difficulty: "Easy" },
-          { title: "3Sum", path: "/problems/two-pointers/three-sum", difficulty: "Medium" },
-          { title: "Sort Colors", path: "/problems/two-pointers/sort-colors", difficulty: "Medium" }
-        ],
-        Backtracking: [
-          { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" },
-          { title: "Binary Watch", path: "/problems/backtracking/binary-watch", difficulty: "Easy" },
-          { title: "Letter Combinations", path: "/problems/backtracking/letter-combinations", difficulty: "Medium" }
-        ],
-        "Dynamic Programming": [
-          { title: "Climbing Stairs", path: "/problems/dp/climbing-stairs", difficulty: "Easy" }
-        ],
-        "Linked Lists": [
-          { title: "Linked List Cycle", path: "/problems/linked-lists/cycle", difficulty: "Easy" }
-        ]
-      };
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (problemsDropdownRef.current && !problemsDropdownRef.current.contains(event.target)) {
+        setProblemsDropdownOpen(false);
+      }
+      if (dpDropdownRef.current && !dpDropdownRef.current.contains(event.target)) {
+        setDpDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const toggleProblemsDropdown = (e) => {
+    e.preventDefault();
+    setProblemsDropdownOpen(!problemsDropdownOpen);
+  };
+
+  const toggleDpDropdown = (e) => {
+    e.preventDefault();
+    setDpDropdownOpen(!dpDropdownOpen);
+  };
+  const problems = {
+    Graphs: [
+      { title: "Number of Islands", path: "/problems/graphs/number-of-islands", difficulty: "Medium" },
+      { title: "Max Area of Island", path: "/problems/graphs/max-area-island", difficulty: "Medium" },
+      { title: "Employee Importance", path: "/problems/graphs/employee-importance", difficulty: "Medium" },
+      { title: "Clone Graph", path: "/problems/graphs/clone-graph", difficulty: "Medium" },
+      { title: "Surrounded Regions", path: "/problems/graphs/surrounded-regions", difficulty: "Medium" },
+      { title: "Open The Lock", path: "/problems/graphs/open-the-lock", difficulty: "Medium" }
+    ],
+    Trees: [
+      { title: "Level Order Traversal", path: "/problems/trees/level-order", difficulty: "Medium" },
+      { title: "Maximum Depth", path: "/problems/trees/max-depth", difficulty: "Easy" },
+      { title: "Lowest Common Ancestor", path: "/problems/trees/lowest-common-ancestor", difficulty: "Medium" },
+      { title: "Binary Tree Paths", path: "/problems/trees/binary-tree-paths", difficulty: "Easy" }
+    ],
+    "Sliding Window": [
+      { title: "Longest Substring", path: "/problems/sliding-window/longest-substring", difficulty: "Medium" },
+      { title: "Maximum Vowels", path: "/problems/sliding-window/max-vowels", difficulty: "Medium" },
+      { title: "Diet Plan Performance", path: "/problems/sliding-window/diet-plan-performance", difficulty: "Easy" },
+      { title: "Maximum Average Subarray I", path: "/problems/sliding-window/maximum-average-subarray", difficulty: "Easy" },
+      { title: "Contains Duplicate II", path: "/problems/sliding-window/contains-duplicate-ii", difficulty: "Easy" }
+    ],
+    "Two Pointers": [
+      { title: "Two Sum II", path: "/problems/two-pointers/two-sum", difficulty: "Easy" },
+      { title: "Move Zeroes", path: "/problems/two-pointers/move-zeroes", difficulty: "Easy" },
+      { title: "Valid Palindrome", path: "/problems/two-pointers/valid-palindrome", difficulty: "Easy" },
+      { title: "3Sum", path: "/problems/two-pointers/three-sum", difficulty: "Medium" },
+      { title: "Sort Colors", path: "/problems/two-pointers/sort-colors", difficulty: "Medium" }
+    ],
+    Backtracking: [
+      { title: "Subsets", path: "/problems/backtracking/subsets", difficulty: "Medium" },
+      { title: "Binary Watch", path: "/problems/backtracking/binary-watch", difficulty: "Easy" },
+      { title: "Letter Combinations", path: "/problems/backtracking/letter-combinations", difficulty: "Medium" },
+      { title: "Permutations", path: "/problems/backtracking/permutations", difficulty: "Medium" },
+      { title: "Combination Sum", path: "/problems/backtracking/combination-sum", difficulty: "Medium" }
+    ],
+    "Dynamic Programming": [
+      { title: "Climbing Stairs", path: "/problems/dp/climbing-stairs", difficulty: "Easy" },
+      { title: "Best Time to Buy and Sell Stock", path: "/problems/dp/best-time-to-buy-and-sell-stock", difficulty: "Easy" },
+      { title: "Maximum Subarray", path: "/problems/dp/maximum-subarray", difficulty: "Medium" }
+    ],
+    "Linked Lists": [
+      { title: "Linked List Cycle", path: "/problems/linked-lists/cycle", difficulty: "Easy" }
+    ]
+  };
   return (
     <nav className="navbar">
       <NavLink to="/home" className="navbar-brand">Data Structures & Algorithms</NavLink>
       <ul className="nav-links">
+        <li className="dropdown">
+          <span className="dropdown-title">
+            <NavLink to="/data-structures-overview" className="nav-link">DS Overview</NavLink>
+          </span>
+        </li>
         <li className="dropdown">
           <span className="dropdown-title">Graph</span>
           <div className="dropdown-content">
@@ -91,32 +99,32 @@ const Navbar = () => {
           </div>
         </li>
         <li className={`dropdown problems-dropdown ${problemsDropdownOpen ? 'active' : ''}`} ref={problemsDropdownRef}>
-        <div className="dropdown-trigger" onClick={toggleProblemsDropdown}>
+          <div className="dropdown-trigger" onClick={toggleProblemsDropdown}>
             <span className="dropdown-title">Problems Menu</span>
-        </div>
-        <div className={`dropdown-content ${problemsDropdownOpen ? 'show' : ''}`}>
+          </div>
+          <div className={`dropdown-content ${problemsDropdownOpen ? 'show' : ''}`}>
             <div className="dropdown-inner">
-            {Object.entries(problems).map(([category, problemList]) => (
+              {Object.entries(problems).map(([category, problemList]) => (
                 <div key={category} className="submenu">
-                <span className="submenu-title">{category}</span>
-                <div className="problem-category">
+                  <span className="submenu-title">{category}</span>
+                  <div className="problem-category">
                     {problemList.map(problem => (
-                    <NavLink 
-                        key={problem.path} 
+                      <NavLink
+                        key={problem.path}
                         to={problem.path}
                         className="problem-link"
-                    >
+                      >
                         <span className="problem-title">{problem.title}</span>
                         <span className={`difficulty-tag ${problem.difficulty.toLowerCase()}`}>
-                        {problem.difficulty}
+                          {problem.difficulty}
                         </span>
-                    </NavLink>
+                      </NavLink>
                     ))}
+                  </div>
                 </div>
-                </div>
-            ))}
+              ))}
             </div>
-        </div>
+          </div>
         </li>
         <li className="dropdown">
           <span className="dropdown-title">Linked List</span>
@@ -134,8 +142,8 @@ const Navbar = () => {
           </div>
         </li>
         <li className="dropdown">
-        <span className="dropdown-title">Sorting</span>
-        <div className="dropdown-content">
+          <span className="dropdown-title">Sorting</span>
+          <div className="dropdown-content">
             <NavLink to="/sorting/bubble">Bubble Sort</NavLink>
             <NavLink to="/sorting/insertion">Insertion Sort</NavLink>
             <NavLink to="/sorting/quick">Quick Sort</NavLink>
@@ -144,24 +152,24 @@ const Navbar = () => {
             <NavLink to="/sorting/counting">Counting Sort</NavLink>
             <NavLink to="/sorting/radix">Radix Sort</NavLink>
             <NavLink to="/sorting/bucket">Bucket Sort</NavLink>
-        </div>
+          </div>
         </li>
         <li className="dropdown">
-        <span className="dropdown-title">
-          <NavLink to="/hash-table" className="nav-link">Hash Table</NavLink>
-        </span>
+          <span className="dropdown-title">
+            <NavLink to="/hash-table" className="nav-link">Hash Table</NavLink>
+          </span>
         </li>
         <li className={`dropdown dynamic-programming-dropdown ${dpDropdownOpen ? 'active' : ''}`} ref={dpDropdownRef}>
-        <div className="dropdown-trigger" onClick={toggleDpDropdown}>
+          <div className="dropdown-trigger" onClick={toggleDpDropdown}>
             <span className="dropdown-title">Dynamic Programming</span>
-        </div>
-        <div className={`dropdown-content ${dpDropdownOpen ? 'show' : ''}`}>
+          </div>
+          <div className={`dropdown-content ${dpDropdownOpen ? 'show' : ''}`}>
             <NavLink to="/dp/sliding-window">Sliding Window</NavLink>
             <NavLink to="/dp/two-pointers">Two Pointers</NavLink>
             <NavLink to="/dp/backtracking">Backtracking</NavLink>
             <NavLink to="/dp/tabulation">Tabulation</NavLink>
             <NavLink to="/dp/memoization">Memoization</NavLink>
-        </div>
+          </div>
         </li>
       </ul>
     </nav>

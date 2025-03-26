@@ -1,0 +1,133 @@
+/* src/pages/Problems/DP/BestTimeToBuyAndSellStock.css */
+
+.stock-visualization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.stock-chart {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.chart-container {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-right: 1px solid #ddd;
+  width: 40px;
+}
+
+.y-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-grow: 1;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.price-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  background-color: #4caf50;
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.price-bar.current {
+  background-color: #2196f3;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.7);
+}
+
+.price-bar.min-price {
+  background-color: #ff9800;
+}
+
+.price-bar.current.min-price {
+  background-color: #f44336;
+}
+
+.price-label {
+  position: absolute;
+  top: -20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.day-label {
+  position: absolute;
+  bottom: -25px;
+  font-size: 12px;
+  color: #666;
+}
+
+.stock-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stock-chart {
+    height: 250px;
+  }
+  
+  .price-bar {
+    width: 30px;
+  }
+  
+  .stock-info {
+    flex-direction: column;
+  }
+}

@@ -100,6 +100,16 @@ def find_pair_with_sum(arr, target):
   return (
     <div className="page-container">
       <h1>Two Pointers Pattern</h1>
+      
+      <p>
+        The Two Pointers pattern is an efficient technique that uses two pointers to iterate through a data structure, 
+        typically an array or linked list. These pointers can start at different positions and move toward each other 
+        or in the same direction at different speeds. This approach is particularly effective for solving problems 
+        involving sorted arrays, searching for pairs with specific constraints, or when we need to compare elements 
+        from different positions. By using two pointers instead of nested loops, we can often reduce the time complexity 
+        from O(n²) to O(n), making it a powerful optimization technique for many algorithmic problems.
+      </p>
+      
       <h2>Find Pair with Target Sum Problem</h2>
     <p>
       The Find Pair with Target Sum problem involves finding two numbers in a given array that add up to a

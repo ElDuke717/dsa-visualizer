@@ -95,6 +95,16 @@ def fibonacci(n, memo=None):
   return (
     <div className="page-container">
       <h1>Memoization (Top-Down Dynamic Programming)</h1>
+      
+      <p>
+        Memoization is a top-down approach to Dynamic Programming where we optimize recursive solutions by 
+        storing previously calculated results. When a function is called with the same inputs multiple times, 
+        instead of recalculating the result each time, we retrieve the previously computed result from a cache 
+        (memo). This technique dramatically improves performance for problems with overlapping subproblems by 
+        eliminating redundant calculations. Memoization maintains the natural recursive structure of the solution 
+        while achieving efficiency comparable to iterative approaches.
+      </p>
+      
       <h2>Fibonacci Sequence Problem</h2>
       <p>
         This implementation demonstrates how memoization can optimize recursive solutions

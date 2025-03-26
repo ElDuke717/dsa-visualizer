@@ -74,6 +74,16 @@ def fibonacci(n):
   return (
     <div className="page-container">
       <h1>Tabulation (Bottom-Up Dynamic Programming)</h1>
+      
+      <p>
+        Tabulation is a bottom-up approach to Dynamic Programming where we start by solving the smallest 
+        subproblems first and use their solutions to build up to larger subproblems. This iterative approach 
+        fills a table with solutions to subproblems in a systematic way, ensuring that when we need to solve 
+        a larger subproblem, all of its dependencies have already been calculated and stored in the table. 
+        Unlike recursion-based approaches, tabulation avoids function call overhead and stack limitations, 
+        making it highly efficient for problems with overlapping subproblems and optimal substructure.
+      </p>
+      
       <h2>Fibonacci Sequence Problem</h2>
       <p>
         The Fibonacci sequence is a series of numbers where each number is the sum of the two
@@ -172,7 +182,9 @@ def fibonacci(n):
           <h3>Common Problems:</h3>
           <ul>
             <li>Fibonacci Numbers</li>
-            <li>Climbing Stairs</li>
+            <li><a href="/problems/dp/climbing-stairs">Climbing Stairs</a></li>
+            <li><a href="/problems/dp/best-time-to-buy-and-sell-stock">Best Time to Buy and Sell Stock</a></li>
+            <li><a href="/problems/dp/maximum-subarray">Maximum Subarray</a></li>
             <li>Coin Change</li>
             <li>Longest Common Subsequence</li>
           </ul>

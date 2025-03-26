@@ -22,42 +22,42 @@ const BinaryTreePaths = () => {
       right: null
     }
   });
-  
+
   const [paths, setPaths] = useState([]);
   const [currentPath, setCurrentPath] = useState([]);
   const [visitedNodes, setVisitedNodes] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
   const [speed, setSpeed] = useState(1000);
   const [language, setLanguage] = useState('javascript');
-  
+
   const canvasRef = useRef(null);
-  
+
   // Function to draw the binary tree
   const drawTree = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     const nodeRadius = 20;
     const levelHeight = 80;
-    
+
     // Function to calculate the width of a subtree
     const getTreeWidth = (node, level) => {
       if (!node) return 0;
       if (!node.left && !node.right) return 1;
-      
+
       const leftWidth = getTreeWidth(node.left, level + 1);
       const rightWidth = getTreeWidth(node.right, level + 1);
-      
+
       return leftWidth + rightWidth;
     };
-    
+
     // Function to draw a node
     const drawNode = (node, x, y, parentX, parentY, level, horizontalSpacing) => {
       if (!node) return;
-      
+
       // Draw line from parent to this node
       if (parentX !== null && parentY !== null) {
         ctx.beginPath();
@@ -67,11 +67,11 @@ const BinaryTreePaths = () => {
         ctx.lineWidth = 2;
         ctx.stroke();
       }
-      
+
       // Draw node
       ctx.beginPath();
       ctx.arc(x, y, nodeRadius, 0, Math.PI * 2);
-      
+
       // Highlight node if it's in the current path
       if (currentPath.includes(node.val)) {
         ctx.fillStyle = '#4CAF50';
@@ -80,71 +80,71 @@ const BinaryTreePaths = () => {
       } else {
         ctx.fillStyle = '#fff';
       }
-      
+
       ctx.strokeStyle = '#333';
       ctx.lineWidth = 2;
       ctx.fill();
       ctx.stroke();
-      
+
       // Draw node value
       ctx.fillStyle = '#000';
       ctx.font = '16px Arial';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(node.val, x, y);
-      
+
       // Calculate positions for children
       const leftWidth = node.left ? getTreeWidth(node.left, level + 1) : 0;
       const rightWidth = node.right ? getTreeWidth(node.right, level + 1) : 0;
-      
+
       const leftX = x - horizontalSpacing * (rightWidth > 0 ? 1 : 0.5);
       const rightX = x + horizontalSpacing * (leftWidth > 0 ? 1 : 0.5);
       const childY = y + levelHeight;
-      
+
       // Draw children
       if (node.left) {
         drawNode(node.left, leftX, childY, x, y, level + 1, horizontalSpacing / 2);
       }
-      
+
       if (node.right) {
         drawNode(node.right, rightX, childY, x, y, level + 1, horizontalSpacing / 2);
       }
     };
-    
+
     // Start drawing from the root
     const totalWidth = getTreeWidth(treeData, 0);
     const horizontalSpacing = canvas.width / (totalWidth + 1) / 2;
     drawNode(treeData, canvas.width / 2, 50, null, null, 0, horizontalSpacing);
   };
-  
+
   // Redraw the tree whenever the tree data or current path changes
   useEffect(() => {
     drawTree();
   }, [treeData, currentPath, visitedNodes]);
-  
+
   // Sleep function for animation
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-  
+
   // Function to find all paths in the binary tree
   const findPaths = async () => {
     if (isRunning) return;
-    
+
     setIsRunning(true);
     setPaths([]);
     setCurrentPath([]);
     setVisitedNodes([]);
-    
+
     const result = [];
-    
+
     const dfs = async (node, path) => {
       if (!node) return;
-      
+
       // Add current node to path
       const newPath = [...path, node.val];
       setCurrentPath(newPath);
       setVisitedNodes(prev => [...prev, node.val]);
       await sleep(speed);
-      
+
       // If it's a leaf node, we've found a path
       if (!node.left && !node.right) {
         const pathStr = newPath.join('->');
@@ -152,35 +152,35 @@ const BinaryTreePaths = () => {
         setPaths(prev => [...prev, pathStr]);
         await sleep(speed);
       }
-      
+
       // Continue DFS on left and right children
       if (node.left) {
         await dfs(node.left, newPath);
       }
-      
+
       if (node.right) {
         await dfs(node.right, newPath);
       }
-      
+
       // Backtrack
       setCurrentPath(path);
       await sleep(speed);
     };
-    
+
     await dfs(treeData, []);
-    
+
     setCurrentPath([]);
     setIsRunning(false);
     return result;
   };
-  
+
   // Function to reset the visualization
   const resetVisualization = () => {
     setPaths([]);
     setCurrentPath([]);
     setVisitedNodes([]);
   };
-  
+
   // Function to handle tree input changes
   const handleTreeInputChange = (e) => {
     try {
@@ -191,7 +191,7 @@ const BinaryTreePaths = () => {
       console.error('Invalid JSON format for tree data');
     }
   };
-  
+
   const implementations = {
     javascript: `
 /**
@@ -266,7 +266,7 @@ class Solution:
         dfs(root, [])
         return result`
   };
-  
+
   return (
     <div className="problem-page">
       <header className="problem-header">
@@ -277,7 +277,7 @@ class Solution:
           <span className="category">Backtracking</span>
         </div>
       </header>
-      
+
       <section className="problem-statement">
         <h2>Problem Statement</h2>
         <p>
@@ -295,12 +295,12 @@ class Solution:
           </div>
         </div>
       </section>
-      
+
       <section className="visualization">
         <h2>Visualization</h2>
         <div className="tree-visualization">
           <canvas ref={canvasRef} width="600" height="300" className="tree-canvas"></canvas>
-          
+
           <div className="paths-display">
             <h3>Paths Found ({paths.length}):</h3>
             <div className="paths-list">
@@ -311,7 +311,7 @@ class Solution:
               ))}
             </div>
           </div>
-          
+
           <div className="controls">
             <div className="input-group">
               <label>Tree Input (JSON):</label>
@@ -323,7 +323,7 @@ class Solution:
                 className="tree-input"
               />
             </div>
-            
+
             <div className="input-group">
               <label>Animation Speed (ms):</label>
               <input
@@ -336,7 +336,7 @@ class Solution:
               />
               <span>{speed}ms</span>
             </div>
-            
+
             <div className="button-group">
               <button
                 onClick={findPaths}
@@ -356,7 +356,7 @@ class Solution:
           </div>
         </div>
       </section>
-      
+
       <section className="approach">
         <h2>Approach</h2>
         <div className="approach-content">
@@ -368,15 +368,15 @@ class Solution:
             <li>Recursively explore the left and right children, passing the updated path.</li>
             <li>When backtracking, remove the current node from the path.</li>
           </ol>
-          
+
           <h3>Time Complexity</h3>
           <p>O(N), where N is the number of nodes in the binary tree. We visit each node exactly once.</p>
-          
+
           <h3>Space Complexity</h3>
           <p>O(H), where H is the height of the tree. This is the space used by the recursion stack. In the worst case (skewed tree), H can be O(N).</p>
         </div>
       </section>
-      
+
       <section className="implementation">
         <h2>Implementation</h2>
         <div className="language-selector">

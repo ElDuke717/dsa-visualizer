@@ -278,7 +278,7 @@ def solve_n_queens(n):
           <ul>
             <li>N-Queens Problem</li>
             <li>Sudoku Solver</li>
-            <li>Combination Sum</li>
+            <li><a href="/problems/backtracking/combination-sum">Combination Sum</a></li>
             <li>Permutations</li>
             <li>Subset Sum</li>
             <li><a href="/problems/backtracking/subsets">Subsets</a></li>
