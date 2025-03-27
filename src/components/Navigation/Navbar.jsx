@@ -74,7 +74,9 @@ const Navbar = () => {
     "Dynamic Programming": [
       { title: "Climbing Stairs", path: "/problems/dp/climbing-stairs", difficulty: "Easy" },
       { title: "Best Time to Buy and Sell Stock", path: "/problems/dp/best-time-to-buy-and-sell-stock", difficulty: "Easy" },
-      { title: "Maximum Subarray", path: "/problems/dp/maximum-subarray", difficulty: "Medium" }
+      { title: "Maximum Subarray", path: "/problems/dp/maximum-subarray", difficulty: "Medium" },
+      { title: "House Robber", path: "/problems/dp/house-robber", difficulty: "Medium" },
+      { title: "Coin Change", path: "/problems/dp/coin-change", difficulty: "Medium" } // Added Coin Change link
     ],
     "Linked Lists": [
       { title: "Linked List Cycle", path: "/problems/linked-lists/cycle", difficulty: "Easy" }

@@ -63,6 +63,8 @@ import CombinationSum from './pages/Problems/Backtracking/CombinationSum';
 import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
 import BestTimeToBuyAndSellStock from './pages/Problems/DP/BestTimeToBuyAndSellStock';
 import MaximumSubarray from './pages/Problems/DP/MaximumSubarray';
+import HouseRobber from './pages/Problems/DP/HouseRobber';
+import CoinChange from './pages/Problems/DP/CoinChange'; // Import CoinChange
 import Cycle from './pages/Problems/LinkedLists/Cycle';
 import "./App.css";
 
@@ -167,6 +169,8 @@ function App() {
             <Route path="/problems/dp/climbing-stairs" element={<ClimbingStairs />} />
             <Route path="/problems/dp/best-time-to-buy-and-sell-stock" element={<BestTimeToBuyAndSellStock />} />
             <Route path="/problems/dp/maximum-subarray" element={<MaximumSubarray />} />
+            <Route path="/problems/dp/house-robber" element={<HouseRobber />} />
+            <Route path="/problems/dp/coin-change" element={<CoinChange />} /> {/* Add CoinChange route */}
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
 
           </Routes>

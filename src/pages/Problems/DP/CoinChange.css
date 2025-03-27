@@ -1,0 +1,159 @@
+/* Styles for Coin Change visualization */
+.coin-change-visualization {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.coins-display {
+    display: flex;
+    flex-direction: column; /* Stack label and items vertically */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.coins-display label {
+    font-weight: bold;
+    color: #333;
+}
+
+.coin-items {
+    display: flex;
+    gap: 10px; /* Space between coin items */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.coin-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Make them circular */
+    border: 2px solid #DAA520; /* Gold-like border */
+    background-color: #FFD700; /* Gold color */
+    color: #4a2c00; /* Dark brown text */
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.coin-item.current-coin {
+    border-color: #007bff; /* Highlight border for current coin */
+    transform: scale(1.15);
+    z-index: 1;
+}
+
+.dp-array-display-cc { /* Unique class for Coin Change DP */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if too wide */
+    padding-bottom: 10px; /* Space for scrollbar */
+}
+
+.dp-array-display-cc label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dp-cells-cc { /* Unique class for Coin Change DP cells container */
+    display: flex;
+    gap: 5px;
+    padding: 5px; /* Padding around the cells */
+}
+
+.dp-cell-cc { /* Unique class for Coin Change DP cell */
+    min-width: 50px; /* Ensure minimum width */
+    height: 55px;
+    border: 1px solid #aaa;
+    display: flex;
+    flex-direction: column; /* Stack index and value */
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 2px;
+    text-align: center;
+}
+
+.dp-cell-cc .dp-index {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.dp-cell-cc .dp-value {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.dp-cell-cc.current-dp-cc { /* Unique class for current DP cell */
+    border-color: #dc3545; /* Red border */
+    border-width: 2px;
+    background-color: #ffeeba; /* Yellow background */
+}
+
+.change-info { /* Renamed from robber-info */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 450px; /* Adjusted width */
+    align-items: center;
+}
+
+.change-info .info-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.change-info .info-label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.change-info .info-value {
+    font-family: monospace;
+    font-size: 1.1em;
+    color: #000;
+    text-align: right;
+}
+
+.change-info .action-text {
+    color: #0056b3; /* Blue color for action text */
+    font-weight: bold;
+    font-size: 1em; /* Slightly smaller action text */
+}
+
+.change-info .result-text {
+    font-weight: bold;
+    color: #28a745; /* Green for final result */
+}
+/* Removed non-standard :contains selector. Conditional styling can be done in JSX. */
+
+
+/* Re-use controls styling from HouseRobber.css (assuming it's globally available or imported) */
+/* If not, copy the .controls, .input-group, .button-group styles here */
+/* Assuming .controls styles are available via Problems.css or similar */
