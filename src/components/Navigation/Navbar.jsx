@@ -144,17 +144,14 @@ const Navbar = () => {
           </div>
         </li>
         <li className="dropdown">
-          <span className="dropdown-title">Sorting</span>
-          <div className="dropdown-content">
-            <NavLink to="/sorting/bubble">Bubble Sort</NavLink>
-            <NavLink to="/sorting/insertion">Insertion Sort</NavLink>
-            <NavLink to="/sorting/quick">Quick Sort</NavLink>
-            <NavLink to="/sorting/merge">Merge Sort</NavLink>
-            <NavLink to="/sorting/heap">Heap Sort</NavLink>
-            <NavLink to="/sorting/counting">Counting Sort</NavLink>
-            <NavLink to="/sorting/radix">Radix Sort</NavLink>
-            <NavLink to="/sorting/bucket">Bucket Sort</NavLink>
-          </div>
+          <span className="dropdown-title">
+            <NavLink to="/sorting-algorithms-overview" className="nav-link">Sorting Algorithms</NavLink>
+          </span>
+        </li>
+        <li className="dropdown">
+          <span className="dropdown-title">
+            <NavLink to="/algorithmic-patterns" className="nav-link">Algorithmic Patterns</NavLink>
+          </span>
         </li>
         <li className="dropdown">
           <span className="dropdown-title">

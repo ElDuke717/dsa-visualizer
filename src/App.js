@@ -10,6 +10,8 @@ import Navbar from "./components/Navigation/Navbar";
 import Footer from "./components/Footer/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import DataStructuresOverviewPage from "./pages/DataStructuresOverview/DataStructuresOverviewPage";
+import SortingAlgorithmsOverviewPage from "./pages/SortingAlgorithmsOverview/SortingAlgorithmsOverviewPage";
+import AlgorithmicPatternsPage from "./pages/AlgorithmicPatterns/AlgorithmicPatternsPage";
 import BFSPage from "./pages/BFS/BFSPage";
 import DFSPage from "./pages/DFS/DFSPage";
 import DijkstraPage from "./pages/Graph/DijkstraPage";
@@ -78,6 +80,8 @@ function App() {
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<LandingPage />} />
             <Route path="/data-structures-overview" element={<DataStructuresOverviewPage />} />
+            <Route path="/sorting-algorithms-overview" element={<SortingAlgorithmsOverviewPage />} />
+            <Route path="/algorithmic-patterns" element={<AlgorithmicPatternsPage />} />
 
             <Route path="/graph/basic" element={<BasicGraphPage />} />
             <Route path="/graph/bfs" element={<BFSPage />} />

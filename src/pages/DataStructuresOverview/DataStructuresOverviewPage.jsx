@@ -6,15 +6,135 @@ import './DataStructuresOverviewPage.css';
 const DataStructuresOverviewPage = () => {
   return (
     <div className="overview-page-container">
-      <h1>Data Structures & Algorithms Overview</h1>
+      <h1>Data Structures Overview</h1>
       
       <div className="overview-nav">
-        <a href="#graphs">Graphs</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#strings">Strings</a>
         <a href="#linked-lists">Linked Lists</a>
+        <a href="#stacks">Stacks</a>
+        <a href="#queues">Queues</a>
         <a href="#trees">Trees</a>
-        <a href="#sorting">Sorting Algorithms</a>
+        <a href="#heaps">Heaps</a>
         <a href="#hash-tables">Hash Tables</a>
+        <a href="#sets">Sets</a>
+        <a href="#graphs">Graphs</a>
       </div>
+
+      <section id="arrays" className="overview-section">
+        <h2>Arrays & Dynamic Arrays</h2>
+        <pre className="ascii-art">
+          {`  Static Array:
+  [10] [20] [30] [40] [50]
+              0    1    2    3    4   ← Indices
+  
+  Dynamic Array (ArrayList/Vector):
+  [10] [20] [30] [40] [50] [__] [__] [__]
+   ↑                   ↑     ↑         ↑
+  Used elements      Size   Reserved capacity`}
+        </pre>
+        <div className="overview-content">
+          <div className="overview-description">
+            <h3>What are Arrays?</h3>
+            <p>
+              Arrays are a fundamental data structure that store elements of the same type in contiguous memory locations.
+              Static arrays have a fixed size determined at creation, while dynamic arrays (like ArrayList in Java or Vector in C++)
+              can resize automatically as elements are added or removed.
+            </p>
+            
+            <h3>Why are Arrays used?</h3>
+            <p>
+              Arrays provide fast random access to elements via indices, making them efficient for scenarios where
+              direct access to elements is frequent. They form the foundation for many other data structures and algorithms.
+            </p>
+            
+            <h3>Where are Arrays used?</h3>
+            <ul>
+              <li>Storing and manipulating collections of similar items</li>
+              <li>Implementation of other data structures (stacks, queues, heaps)</li>
+              <li>Matrix operations and multi-dimensional data</li>
+              <li>Buffer pools and memory management</li>
+              <li>Lookup tables and caching</li>
+            </ul>
+            
+            <h3>Key Elements of Arrays</h3>
+            <ul>
+              <li><strong>Elements:</strong> Individual items stored in the array</li>
+              <li><strong>Index:</strong> Position of an element (usually zero-based)</li>
+              <li><strong>Length/Size:</strong> Number of elements in the array</li>
+              <li><strong>Capacity:</strong> Maximum number of elements (for dynamic arrays)</li>
+              <li><strong>Contiguous Memory:</strong> Elements stored in adjacent memory locations</li>
+            </ul>
+          </div>
+          
+          <div className="overview-links">
+            <h3>Array Operations</h3>
+            <ul>
+              <li>Access: O(1) - Constant time</li>
+              <li>Search: O(n) - Linear time (unsorted), O(log n) - Binary search (sorted)</li>
+              <li>Insert/Delete at end: O(1) - Amortized for dynamic arrays</li>
+              <li>Insert/Delete at arbitrary position: O(n) - Linear time</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="strings" className="overview-section">
+        <h2>Strings</h2>
+        <pre className="ascii-art">
+          {`  "Hello, World!"
+   
+   H  e  l  l  o  ,     W  o  r  l  d  !
+              0  1  2  3  4  5  6  7  8  9  10 11 12  ← Indices
+   
+   Immutable String: Create new on change
+   "Hello" + " World" → New "Hello World"`}
+        </pre>
+        <div className="overview-content">
+          <div className="overview-description">
+            <h3>What are Strings?</h3>
+            <p>
+              Strings are sequences of characters used to represent text. In most programming languages, 
+              strings are either immutable (cannot be changed after creation) or mutable (can be modified).
+            </p>
+            
+            <h3>Why are Strings used?</h3>
+            <p>
+              Strings are essential for representing, storing, and manipulating text data. They provide
+              specialized operations for text processing and are one of the most commonly used data types.
+            </p>
+            
+            <h3>Where are Strings used?</h3>
+            <ul>
+              <li>Text processing and manipulation</li>
+              <li>User input and output</li>
+              <li>File I/O and data serialization</li>
+              <li>Network communication and protocols</li>
+              <li>Regular expressions and pattern matching</li>
+            </ul>
+            
+            <h3>Key Elements of Strings</h3>
+            <ul>
+              <li><strong>Characters:</strong> Individual units (letters, digits, symbols)</li>
+              <li><strong>Length:</strong> Number of characters in the string</li>
+              <li><strong>Encoding:</strong> Representation of characters (ASCII, UTF-8, etc.)</li>
+              <li><strong>Immutability:</strong> Whether strings can be modified after creation</li>
+              <li><strong>String Pool:</strong> Memory optimization for string literals (in some languages)</li>
+            </ul>
+          </div>
+          
+          <div className="overview-links">
+            <h3>Common String Operations</h3>
+            <ul>
+              <li>Concatenation: Joining strings together</li>
+              <li>Substring: Extracting a portion of a string</li>
+              <li>Search: Finding characters or patterns</li>
+              <li>Replace: Substituting characters or patterns</li>
+              <li>Split/Join: Converting between strings and arrays</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <section id="graphs" className="overview-section">
         <h2>Graphs</h2>
@@ -80,13 +200,125 @@ const DataStructuresOverviewPage = () => {
         </div>
       </section>
 
+      <section id="stacks" className="overview-section">
+        <h2>Stacks</h2>
+        <pre className="ascii-art">
+          {`  LIFO: Last In, First Out
+  
+  Push →  ┌───┐
+                │ D │ ← Top
+          ├───┤
+          │ C │
+          ├───┤
+          │ B │
+          ├───┤
+          │ A │
+  Pop  ←  └───┘`}
+        </pre>
+        <div className="overview-content">
+          <div className="overview-description">
+            <h3>What is a Stack?</h3>
+            <p>
+              A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. Elements
+              are added to and removed from the same end, called the top of the stack.
+            </p>
+            
+            <h3>Why are Stacks used?</h3>
+            <p>
+              Stacks provide a simple and efficient way to manage data with LIFO access pattern. They are
+              particularly useful for tracking state in recursive algorithms and managing execution context.
+            </p>
+            
+            <h3>Where are Stacks used?</h3>
+            <ul>
+              <li>Function call management (call stack)</li>
+              <li>Expression evaluation and syntax parsing</li>
+              <li>Undo mechanisms in applications</li>
+              <li>Backtracking algorithms</li>
+              <li>Browser history navigation</li>
+            </ul>
+            
+            <h3>Key Operations of Stacks</h3>
+            <ul>
+              <li><strong>Push:</strong> Add an element to the top (O(1))</li>
+              <li><strong>Pop:</strong> Remove the top element (O(1))</li>
+              <li><strong>Peek/Top:</strong> View the top element without removing it (O(1))</li>
+              <li><strong>isEmpty:</strong> Check if the stack is empty (O(1))</li>
+              <li><strong>Size:</strong> Get the number of elements (O(1))</li>
+            </ul>
+          </div>
+          
+          <div className="overview-links">
+            <h3>Stack Implementation</h3>
+            <ul>
+              <li>Array-based implementation</li>
+              <li>Linked list-based implementation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="queues" className="overview-section">
+        <h2>Queues</h2>
+        <pre className="ascii-art">
+          {`  FIFO: First In, First Out
+  
+          ┌───┬───┬───┬───┐
+  Enqueue → A │ B │ C │ D → Dequeue
+          └───┴───┴───┴───┘
+           Front         Rear`}
+        </pre>
+        <div className="overview-content">
+          <div className="overview-description">
+            <h3>What is a Queue?</h3>
+            <p>
+              A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. Elements
+              are added at one end (rear) and removed from the other end (front).
+            </p>
+            
+            <h3>Why are Queues used?</h3>
+            <p>
+              Queues model real-world waiting lines and are ideal for scenarios where resources need to be
+              processed in the order they arrive, ensuring fairness and sequential processing.
+            </p>
+            
+            <h3>Where are Queues used?</h3>
+            <ul>
+              <li>Task scheduling in operating systems</li>
+              <li>Breadth-first search algorithm</li>
+              <li>Print job spooling</li>
+              <li>Message buffers and data streams</li>
+              <li>Request handling in web servers</li>
+            </ul>
+            
+            <h3>Key Operations of Queues</h3>
+            <ul>
+              <li><strong>Enqueue:</strong> Add an element to the rear (O(1))</li>
+              <li><strong>Dequeue:</strong> Remove the element from the front (O(1))</li>
+              <li><strong>Front/Peek:</strong> View the front element without removing it (O(1))</li>
+              <li><strong>isEmpty:</strong> Check if the queue is empty (O(1))</li>
+              <li><strong>Size:</strong> Get the number of elements (O(1))</li>
+            </ul>
+          </div>
+          
+          <div className="overview-links">
+            <h3>Queue Variations</h3>
+            <ul>
+              <li>Circular Queue: Efficient use of fixed-size array</li>
+              <li>Double-ended Queue (Deque): Insertion/deletion at both ends</li>
+              <li>Priority Queue: Elements have priority values</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section id="linked-lists" className="overview-section">
         <h2>Linked Lists</h2>
         <pre className="ascii-art">
           {`  HEAD
    |
-  [A] -> [B] -> [C] -> [D] -> NULL
-   |      |      |      |
+          [A] -> [B] -> [C] -> [D] -> NULL
+  |      |      |      |
   data   data   data   data`}
         </pre>
         <div className="overview-content">
@@ -144,8 +376,8 @@ const DataStructuresOverviewPage = () => {
          / \\
         /   \\
        B     C
-      / \\     \\
-     D   E     F
+       / \\     \\
+       D   E    F
                 / \\
                 G   H`}
         </pre>
@@ -200,224 +432,114 @@ const DataStructuresOverviewPage = () => {
         </div>
       </section>
 
-      <section id="sorting" className="overview-section">
-        <h2>Sorting Algorithms</h2>
+      <section id="heaps" className="overview-section">
+        <h2>Heaps (Priority Queues)</h2>
         <pre className="ascii-art">
-          {`  [5, 3, 8, 4, 2] → [2, 3, 4, 5, 8]
-   Unsorted Array    Sorted Array`}
+          {`  Max Heap:
+         10
+        /  \\
+       8    9
+      / \\  /
+     4  7 5
+  
+  Parent always greater than children
+  Efficient for finding max/min element`}
         </pre>
         <div className="overview-content">
           <div className="overview-description">
-            <h3>What are Sorting Algorithms?</h3>
+            <h3>What is a Heap?</h3>
             <p>
-              Sorting algorithms are methods for reorganizing a sequence of items in a certain order, typically 
-              ascending or descending. Different algorithms use different strategies and have varying efficiency.
+              A heap is a specialized tree-based data structure that satisfies the heap property. In a max heap, 
+              for any given node, the value of the node is greater than or equal to the values of its children. 
+              In a min heap, the value of the node is less than or equal to the values of its children.
             </p>
             
-            <h3>Why are Sorting Algorithms used?</h3>
+            <h3>Why are Heaps used?</h3>
             <p>
-              Sorting is a fundamental operation in computer science that makes data easier to search, analyze, 
-              and visualize. It's often a prerequisite for many other algorithms.
+              Heaps provide efficient access to the maximum or minimum element, making them ideal for priority-based
+              operations. They are the foundation for priority queues and certain sorting algorithms.
             </p>
             
-            <h3>Where are Sorting Algorithms used?</h3>
+            <h3>Where are Heaps used?</h3>
             <ul>
-              <li>Database operations (ORDER BY clauses)</li>
-              <li>Search algorithms (binary search requires sorted data)</li>
-              <li>Data analysis and visualization</li>
-              <li>Priority queues and scheduling</li>
-              <li>Finding duplicates or unique elements</li>
+              <li>Priority queue implementation</li>
+              <li>Heap sort algorithm</li>
+              <li>Graph algorithms (Dijkstra's, Prim's)</li>
+              <li>Task scheduling by priority</li>
+              <li>Finding kth largest/smallest elements</li>
+            </ul>
+            
+            <h3>Key Operations of Heaps</h3>
+            <ul>
+              <li><strong>Insert:</strong> Add an element to the heap (O(log n))</li>
+              <li><strong>Extract Max/Min:</strong> Remove and return the max/min element (O(log n))</li>
+              <li><strong>Peek:</strong> View the max/min element without removing it (O(1))</li>
+              <li><strong>Heapify:</strong> Convert an array into a heap (O(n))</li>
+              <li><strong>Delete:</strong> Remove a specific element (O(log n))</li>
             </ul>
           </div>
           
           <div className="overview-links">
-            <h3>Explore Sorting Algorithms</h3>
+            <h3>Explore Heaps</h3>
             <ul>
-              <li><Link to="/sorting/bubble">Bubble Sort</Link></li>
-              <li><Link to="/sorting/insertion">Insertion Sort</Link></li>
-              <li><Link to="/sorting/quick">Quick Sort</Link></li>
-              <li><Link to="/sorting/merge">Merge Sort</Link></li>
-              <li><Link to="/sorting/heap">Heap Sort</Link></li>
-              <li><Link to="/sorting/counting">Counting Sort</Link></li>
-              <li><Link to="/sorting/radix">Radix Sort</Link></li>
-              <li><Link to="/sorting/bucket">Bucket Sort</Link></li>
+              <li><Link to="/tree/heap">Heap Implementation</Link></li>
             </ul>
           </div>
         </div>
+      </section>
 
-        <div className="sorting-algorithms">
-          <div className="sorting-algorithm">
-            <h3>Bubble Sort</h3>
-            <pre className="ascii-art">
-              {`[5,3,8,4,2] → [3,5,4,2,8] → [3,4,2,5,8] → [3,2,4,5,8] → [2,3,4,5,8]
-  ↑ ↑         ↑ ↑         ↑ ↑         ↑ ↑         Sorted!
- swap        swap        swap        swap`}
-            </pre>
+      <section id="sets" className="overview-section">
+        <h2>Sets</h2>
+        <pre className="ascii-art">
+          {`  Set: {1, 2, 3, 4, 5}
+  
+  Operations:
+  Union:  {1,2,3} ∪ {3,4,5} = {1,2,3,4,5}
+Intersection: {1,2,3} ∩ {3,4,5} = {3}
+  Difference:   {1,2,3} - {3,4,5} = {1,2}
+  
+  No duplicates allowed!`}
+        </pre>
+        <div className="overview-content">
+          <div className="overview-description">
+            <h3>What is a Set?</h3>
             <p>
-              A simple comparison-based algorithm that repeatedly steps through the list, compares adjacent elements, 
-              and swaps them if they're in the wrong order.
+              A set is a collection of distinct elements with no duplicates. Sets typically don't maintain any specific order
+              of elements and focus on the membership of elements rather than their position or count.
             </p>
+            
+            <h3>Why are Sets used?</h3>
+            <p>
+              Sets are ideal for scenarios where you need to track unique items, test for membership, or perform
+              mathematical set operations like union, intersection, and difference.
+            </p>
+            
+            <h3>Where are Sets used?</h3>
             <ul>
-              <li><strong>Time Complexity:</strong> O(n²) average and worst case</li>
-              <li><strong>Space Complexity:</strong> O(1)</li>
-              <li><strong>Best for:</strong> Small datasets or nearly sorted data</li>
+              <li>Removing duplicates from collections</li>
+              <li>Membership testing (e.g., checking if an element exists)</li>
+              <li>Mathematical set operations</li>
+              <li>Tracking visited nodes in graph algorithms</li>
+              <li>Implementing associative arrays (with HashSet)</li>
             </ul>
-            <Link to="/sorting/bubble" className="learn-more">Learn More</Link>
+            
+            <h3>Key Operations of Sets</h3>
+            <ul>
+              <li><strong>Add/Insert:</strong> Add an element to the set (O(1) average for HashSet)</li>
+              <li><strong>Remove:</strong> Remove an element from the set (O(1) average for HashSet)</li>
+              <li><strong>Contains:</strong> Check if an element exists in the set (O(1) average for HashSet)</li>
+              <li><strong>Union:</strong> Combine two sets</li>
+              <li><strong>Intersection:</strong> Find common elements between two sets</li>
+            </ul>
           </div>
-
-          <div className="sorting-algorithm">
-            <h3>Insertion Sort</h3>
-            <pre className="ascii-art">
-              {`[5,3,8,4,2] → [3,5,8,4,2] → [3,5,8,4,2] → [3,4,5,8,2] → [2,3,4,5,8]
-    ^           ^             ^             ^             ^
- insert 3     insert 8     insert 4     insert 2`}
-            </pre>
-            <p>
-              Builds the sorted array one item at a time by repeatedly taking the next element and inserting it into 
-              its correct position among the previously sorted elements.
-            </p>
+          
+          <div className="overview-links">
+            <h3>Set Implementations</h3>
             <ul>
-              <li><strong>Time Complexity:</strong> O(n²) average and worst case, O(n) best case</li>
-              <li><strong>Space Complexity:</strong> O(1)</li>
-              <li><strong>Best for:</strong> Small datasets or nearly sorted data</li>
+              <li>HashSet: Uses hash table, unordered, O(1) average operations</li>
+              <li>TreeSet: Uses balanced tree, ordered, O(log n) operations</li>
+              <li>LinkedHashSet: Maintains insertion order with hash table</li>
             </ul>
-            <Link to="/sorting/insertion" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Quick Sort</h3>
-            <pre className="ascii-art">
-              {`[5,3,8,4,2] → Choose pivot: 5
-[3,2,4] [5] [8]  → Partition around pivot
-[2,3,4] [5] [8]  → Sort subarrays
-[2,3,4,5,8]      → Combine`}
-            </pre>
-            <p>
-              A divide-and-conquer algorithm that selects a 'pivot' element and partitions the array around it, 
-              then recursively sorts the sub-arrays.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(n log n) average, O(n²) worst case</li>
-              <li><strong>Space Complexity:</strong> O(log n)</li>
-              <li><strong>Best for:</strong> General-purpose sorting with good average performance</li>
-            </ul>
-            <Link to="/sorting/quick" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Merge Sort</h3>
-            <pre className="ascii-art">
-              {`[5,3,8,4,2]           → Original array
-[5,3] [8,4,2]          → Split into subarrays
-[5] [3] [8] [4,2]      → Split until single elements
-[3,5] [2,4,8]          → Merge and sort
-[2,3,4,5,8]            → Final sorted array`}
-            </pre>
-            <p>
-              A divide-and-conquer algorithm that divides the array into halves, sorts each half, then merges 
-              the sorted halves back together.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(n log n) in all cases</li>
-              <li><strong>Space Complexity:</strong> O(n)</li>
-              <li><strong>Best for:</strong> Stable sorting and guaranteed performance</li>
-            </ul>
-            <Link to="/sorting/merge" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Heap Sort</h3>
-            <pre className="ascii-art">
-              {`[5,3,8,4,2]         → Original array
-      5             → Build max heap
-     / \\
-    3   8
-   / \\
-  4   2
-      8             → Heapify
-     / \\
-    4   5
-   / \\
-  3   2
-[2,3,4,5,8]         → Extract max elements`}
-            </pre>
-            <p>
-              Uses a binary heap data structure to build a max-heap, then repeatedly extracts the maximum element 
-              and rebuilds the heap.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(n log n) in all cases</li>
-              <li><strong>Space Complexity:</strong> O(1)</li>
-              <li><strong>Best for:</strong> Memory-constrained environments</li>
-            </ul>
-            <Link to="/sorting/heap" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Counting Sort</h3>
-            <pre className="ascii-art">
-              {`Array: [5,3,8,4,2]
-Count: [0,0,1,1,1,1,0,0,1]  → Count occurrences
-       [0,1,2,3,4,5,6,7,8]  → Indices
-Output: [2,3,4,5,8]         → Place elements`}
-            </pre>
-            <p>
-              A non-comparison-based algorithm that works by counting the occurrences of each element and using 
-              that information to place elements in their correct positions.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(n + k) where k is the range of input</li>
-              <li><strong>Space Complexity:</strong> O(n + k)</li>
-              <li><strong>Best for:</strong> Integer data with a small range</li>
-            </ul>
-            <Link to="/sorting/counting" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Radix Sort</h3>
-            <pre className="ascii-art">
-              {`Original: [170, 45, 75, 90, 802, 24, 2, 66]
-Sort by 1s digit:
-[170, 90, 802, 2, 24, 45, 75, 66]
-Sort by 10s digit:
-[802, 2, 24, 45, 66, 170, 75, 90]
-Sort by 100s digit:
-[2, 24, 45, 66, 75, 90, 170, 802]`}
-            </pre>
-            <p>
-              A non-comparison-based algorithm that sorts integers by processing individual digits, starting from 
-              the least significant digit to the most significant.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(d * (n + k)) where d is the number of digits</li>
-              <li><strong>Space Complexity:</strong> O(n + k)</li>
-              <li><strong>Best for:</strong> Integer or string data with fixed-length keys</li>
-            </ul>
-            <Link to="/sorting/radix" className="learn-more">Learn More</Link>
-          </div>
-
-          <div className="sorting-algorithm">
-            <h3>Bucket Sort</h3>
-            <pre className="ascii-art">
-              {`Array: [0.42, 0.32, 0.73, 0.12, 0.54, 0.19]
-Buckets:
-[0.0-0.2]: [0.12, 0.19]
-[0.2-0.4]: [0.32]
-[0.4-0.6]: [0.42, 0.54]
-[0.6-0.8]: [0.73]
-[0.8-1.0]: []
-Result: [0.12, 0.19, 0.32, 0.42, 0.54, 0.73]`}
-            </pre>
-            <p>
-              Distributes elements into a number of buckets, sorts each bucket individually (often with another algorithm), 
-              then concatenates the sorted buckets.
-            </p>
-            <ul>
-              <li><strong>Time Complexity:</strong> O(n + k) average, O(n²) worst case</li>
-              <li><strong>Space Complexity:</strong> O(n + k)</li>
-              <li><strong>Best for:</strong> Uniformly distributed data over a range</li>
-            </ul>
-            <Link to="/sorting/bucket" className="learn-more">Learn More</Link>
           </div>
         </div>
       </section>
