@@ -79,7 +79,18 @@ const Navbar = () => {
       { title: "Coin Change", path: "/problems/dp/coin-change", difficulty: "Medium" } // Added Coin Change link
     ],
     "Linked Lists": [
-      { title: "Linked List Cycle", path: "/problems/linked-lists/cycle", difficulty: "Easy" }
+      { title: "Linked List Cycle", path: "/problems/linked-lists/cycle", difficulty: "Easy" },
+      { title: "Remove Elements", path: "/problems/linked-lists/remove-elements", difficulty: "Easy" },
+      { title: "Intersection", path: "/problems/linked-lists/intersection", difficulty: "Easy" },
+      { title: "Remove Nth From End", path: "/problems/linked-lists/remove-nth-from-end", difficulty: "Medium" },
+      { title: "Design Linked List", path: "/problems/linked-lists/design", difficulty: "Medium" }
+    ],
+    "Hash Tables": [ // Add Hash Tables category
+      { title: "Intersection of Two Arrays", path: "/problems/hash-tables/intersection-of-two-arrays", difficulty: "Easy" } // Add LeetCode #349
+    ],
+    "Greedy Algorithms": [ // Add Greedy Algorithms category
+      { title: "Best Time to Buy and Sell Stock II", path: "/problems/greedy/best-time-to-buy-and-sell-stock-ii", difficulty: "Medium" }, // Add LeetCode #122
+      { title: "Jump Game", path: "/problems/greedy/jump-game", difficulty: "Medium" } // Add LeetCode #55
     ]
   };
   return (

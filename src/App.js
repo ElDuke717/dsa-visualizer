@@ -66,8 +66,15 @@ import ClimbingStairs from './pages/Problems/DP/ClimbingStairs';
 import BestTimeToBuyAndSellStock from './pages/Problems/DP/BestTimeToBuyAndSellStock';
 import MaximumSubarray from './pages/Problems/DP/MaximumSubarray';
 import HouseRobber from './pages/Problems/DP/HouseRobber';
-import CoinChange from './pages/Problems/DP/CoinChange'; // Import CoinChange
+import CoinChange from './pages/Problems/DP/CoinChange';
 import Cycle from './pages/Problems/LinkedLists/Cycle';
+import RemoveElements from './pages/Problems/LinkedLists/RemoveElements';
+import IntersectionOfTwoLinkedLists from './pages/Problems/LinkedLists/IntersectionOfTwoLinkedLists';
+import RemoveNthNodeFromEnd from './pages/Problems/LinkedLists/RemoveNthNodeFromEnd';
+import DesignLinkedList from './pages/Problems/LinkedLists/DesignLinkedList';
+import IntersectionOfTwoArrays from './pages/Problems/HashTables/IntersectionOfTwoArrays'; // Add import for the new problem
+import BestTimeToBuyAndSellStockII from './pages/Problems/Greedy/BestTimeToBuyAndSellStockII'; // Add import for the new greedy problem
+import JumpGame from './pages/Problems/Greedy/JumpGame'; // Add import for Jump Game
 import "./App.css";
 
 function App() {
@@ -176,6 +183,16 @@ function App() {
             <Route path="/problems/dp/house-robber" element={<HouseRobber />} />
             <Route path="/problems/dp/coin-change" element={<CoinChange />} /> {/* Add CoinChange route */}
             <Route path="/problems/linked-lists/cycle" element={<Cycle />} />
+            <Route path="/problems/linked-lists/remove-elements" element={<RemoveElements />} />
+            <Route path="/problems/linked-lists/intersection" element={<IntersectionOfTwoLinkedLists />} />
+            <Route path="/problems/linked-lists/remove-nth-from-end" element={<RemoveNthNodeFromEnd />} />
+            <Route path="/problems/linked-lists/design" element={<DesignLinkedList />} />
+            {/* Add route for the new Hash Table problem */}
+            <Route path="/problems/hash-tables/intersection-of-two-arrays" element={<IntersectionOfTwoArrays />} />
+            {/* Add route for the new Greedy problem */}
+            <Route path="/problems/greedy/best-time-to-buy-and-sell-stock-ii" element={<BestTimeToBuyAndSellStockII />} />
+            {/* Add route for Jump Game */}
+            <Route path="/problems/greedy/jump-game" element={<JumpGame />} />
 
           </Routes>
         </div>

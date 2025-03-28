@@ -29,14 +29,14 @@ const AlgorithmicPatternsPage = () => {
           {`  BFS (Level Order):
          1
        /   \\
-      2     3    →  [1, 2, 3, 4, 5, 6, 7]
+                                   2     3    →  [1, 2, 3, 4, 5, 6, 7]
      / \\   / \\
     4   5 6   7
   
   DFS (Pre-order):
          1
        /   \\
-      2     3    →  [1, 2, 4, 5, 3, 6, 7]
+                                  2     3    →  [1, 2, 4, 5, 3, 6, 7]
      / \\   / \\
     4   5 6   7`}
         </pre>
@@ -312,18 +312,18 @@ const AlgorithmicPatternsPage = () => {
   Top-Down (Memoization):
   fib(5)
   ├── fib(4)
-  │   ├── fib(3) [cached]
-  │   └── fib(2) [cached]
+               │   ├── fib(3) [cached]
+               │   └── fib(2) [cached]
   └── fib(3)
-      ├── fib(2) [cached]
-      └── fib(1) [cached]
+           ├── fib(2) [cached]
+           └── fib(1) [cached]
   
   Bottom-Up (Tabulation):
   dp[0] = 0, dp[1] = 1
-  dp[2] = dp[1] + dp[0] = 1
-  dp[3] = dp[2] + dp[1] = 2
-  dp[4] = dp[3] + dp[2] = 3
-  dp[5] = dp[4] + dp[3] = 5`}
+       dp[2] = dp[1] + dp[0] = 1
+       dp[3] = dp[2] + dp[1] = 2
+       dp[4] = dp[3] + dp[2] = 3
+       dp[5] = dp[4] + dp[3] = 5`}
         </pre>
         <div className="overview-content">
           <div className="overview-description">
@@ -614,7 +614,9 @@ const AlgorithmicPatternsPage = () => {
               <li>Huffman Coding</li>
               <li>Fractional Knapsack Problem</li>
               <li>Minimum Spanning Tree (Kruskal's, Prim's)</li>
-              <li>Dijkstra's Shortest Path Algorithm</li>
+              <li><Link to="/graph/dijkstra">Dijkstra's Shortest Path Algorithm</Link></li>
+              <li><Link to="/problems/greedy/best-time-to-buy-and-sell-stock-ii">Best Time to Buy and Sell Stock II</Link></li>
+              <li><Link to="/problems/greedy/jump-game">Jump Game</Link></li> {/* Add link for Jump Game */}
             </ul>
           </div>
         </div>
