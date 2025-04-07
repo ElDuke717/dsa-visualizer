@@ -78,6 +78,8 @@ import JumpGame from './pages/Problems/Greedy/JumpGame'; // Add import for Jump 
 import FourSumII from './pages/Problems/HashTables/FourSumII'; // Add import for 4Sum II
 import StringsPage from './pages/Strings/StringsPage'; // Add import for Strings page
 import ReverseStringII from './pages/Problems/Strings/ReverseStringII'; // Add import for Reverse String II problem
+import StackPage from './pages/Stack/StackPage'; // Add import for Stack page
+import QueuePage from './pages/Queue/QueuePage'; // Add import for Queue page
 import "./App.css";
 
 function App() {
@@ -110,6 +112,8 @@ function App() {
             <Route path="/tree/traversal" element={<TreeTraversalPage />} />
             <Route path="/hash-table" element={<HashTablePage />} />
             <Route path="/strings" element={<StringsPage />} /> {/* Add route for Strings page */}
+            <Route path="/stack" element={<StackPage />} /> {/* Add route for Stack page */}
+            <Route path="/queue" element={<QueuePage />} /> {/* Add route for Queue page */}
             <Route path="/sorting/quick" element={<QuickSortPage />} />
             <Route path="/sorting/merge" element={<MergeSortPage />} />
             <Route path="/sorting/heap" element={<HeapSortPage />} />

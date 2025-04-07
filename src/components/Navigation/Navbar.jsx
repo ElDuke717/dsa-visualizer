@@ -180,6 +180,18 @@ const Navbar = () => {
           </span>
           {/* We can add a dropdown here later if needed */}
         </li>
+        {/* Add Stack Link */}
+        <li className="dropdown">
+          <span className="dropdown-title">
+            <NavLink to="/stack" className="nav-link">Stack</NavLink>
+          </span>
+        </li>
+        {/* Add Queue Link */}
+        <li className="dropdown">
+          <span className="dropdown-title">
+            <NavLink to="/queue" className="nav-link">Queue</NavLink>
+          </span>
+        </li>
         <li className={`dropdown dynamic-programming-dropdown ${dpDropdownOpen ? 'active' : ''}`} ref={dpDropdownRef}>
           <div className="dropdown-trigger" onClick={toggleDpDropdown}>
             <span className="dropdown-title">Dynamic Programming</span>

@@ -249,10 +249,9 @@ const DataStructuresOverviewPage = () => {
           </div>
           
           <div className="overview-links">
-            <h3>Stack Implementation</h3>
+            <h3>Explore Stacks</h3>
             <ul>
-              <li>Array-based implementation</li>
-              <li>Linked list-based implementation</li>
+              <li><Link to="/stack">Stack Implementation</Link></li>
             </ul>
           </div>
         </div>
@@ -302,6 +301,11 @@ const DataStructuresOverviewPage = () => {
           </div>
           
           <div className="overview-links">
+            <h3>Explore Queues</h3>
+            <ul>
+              <li><Link to="/queue">Queue Implementation</Link></li>
+            </ul>
+            
             <h3>Queue Variations</h3>
             <ul>
               <li>Circular Queue: Efficient use of fixed-size array</li>
