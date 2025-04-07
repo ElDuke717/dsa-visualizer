@@ -75,6 +75,9 @@ import DesignLinkedList from './pages/Problems/LinkedLists/DesignLinkedList';
 import IntersectionOfTwoArrays from './pages/Problems/HashTables/IntersectionOfTwoArrays'; // Add import for the new problem
 import BestTimeToBuyAndSellStockII from './pages/Problems/Greedy/BestTimeToBuyAndSellStockII'; // Add import for the new greedy problem
 import JumpGame from './pages/Problems/Greedy/JumpGame'; // Add import for Jump Game
+import FourSumII from './pages/Problems/HashTables/FourSumII'; // Add import for 4Sum II
+import StringsPage from './pages/Strings/StringsPage'; // Add import for Strings page
+import ReverseStringII from './pages/Problems/Strings/ReverseStringII'; // Add import for Reverse String II problem
 import "./App.css";
 
 function App() {
@@ -106,6 +109,7 @@ function App() {
             <Route path="/tree/heap" element={<HeapPage />} />
             <Route path="/tree/traversal" element={<TreeTraversalPage />} />
             <Route path="/hash-table" element={<HashTablePage />} />
+            <Route path="/strings" element={<StringsPage />} /> {/* Add route for Strings page */}
             <Route path="/sorting/quick" element={<QuickSortPage />} />
             <Route path="/sorting/merge" element={<MergeSortPage />} />
             <Route path="/sorting/heap" element={<HeapSortPage />} />
@@ -193,6 +197,10 @@ function App() {
             <Route path="/problems/greedy/best-time-to-buy-and-sell-stock-ii" element={<BestTimeToBuyAndSellStockII />} />
             {/* Add route for Jump Game */}
             <Route path="/problems/greedy/jump-game" element={<JumpGame />} />
+            {/* Add route for 4Sum II */}
+            <Route path="/problems/hash-tables/4sum-ii" element={<FourSumII />} />
+            {/* Add route for Reverse String II */}
+            <Route path="/problems/strings/reverse-string-ii" element={<ReverseStringII />} />
 
           </Routes>
         </div>

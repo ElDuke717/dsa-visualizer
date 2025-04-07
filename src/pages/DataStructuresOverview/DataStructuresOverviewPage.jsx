@@ -594,6 +594,12 @@ Intersection: {1,2,3} ∩ {3,4,5} = {3}
             <ul>
               <li><Link to="/hash-table">Hash Table Implementation</Link></li>
             </ul>
+            
+            <h3>Hash Table Problems</h3>
+            <ul>
+              <li><Link to="/problems/hash-tables/intersection-of-two-arrays">Intersection of Two Arrays</Link></li>
+              <li><Link to="/problems/hash-tables/4sum-ii">4Sum II</Link></li> {/* Add link for 4Sum II */}
+            </ul>
           </div>
         </div>
       </section>
