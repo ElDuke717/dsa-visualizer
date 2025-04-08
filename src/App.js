@@ -78,6 +78,7 @@ import JumpGame from './pages/Problems/Greedy/JumpGame'; // Add import for Jump 
 import FourSumII from './pages/Problems/HashTables/FourSumII'; // Add import for 4Sum II
 import StringsPage from './pages/Strings/StringsPage'; // Add import for Strings page
 import ReverseStringII from './pages/Problems/Strings/ReverseStringII'; // Add import for Reverse String II problem
+import FindAndReplaceString from './pages/Problems/Strings/FindAndReplaceString'; // Add import for Find And Replace problem
 import StackPage from './pages/Stack/StackPage'; // Add import for Stack page
 import QueuePage from './pages/Queue/QueuePage'; // Add import for Queue page
 import "./App.css";
@@ -205,6 +206,8 @@ function App() {
             <Route path="/problems/hash-tables/4sum-ii" element={<FourSumII />} />
             {/* Add route for Reverse String II */}
             <Route path="/problems/strings/reverse-string-ii" element={<ReverseStringII />} />
+            {/* Add route for Find And Replace in String */}
+            <Route path="/problems/strings/find-and-replace" element={<FindAndReplaceString />} />
 
           </Routes>
         </div>

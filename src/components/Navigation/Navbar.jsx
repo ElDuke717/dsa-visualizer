@@ -94,7 +94,8 @@ const Navbar = () => {
       { title: "Jump Game", path: "/problems/greedy/jump-game", difficulty: "Medium" } // Add LeetCode #55
     ],
     "Strings": [ // Add Strings category
-      { title: "Reverse String II", path: "/problems/strings/reverse-string-ii", difficulty: "Easy" } // Add LeetCode #541
+      { title: "Reverse String II", path: "/problems/strings/reverse-string-ii", difficulty: "Easy" }, // Add LeetCode #541
+      { title: "Find And Replace", path: "/problems/strings/find-and-replace", difficulty: "Medium" } // Add LeetCode #833
     ]
   };
   return (
